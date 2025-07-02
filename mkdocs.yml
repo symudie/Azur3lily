@@ -1,0 +1,108 @@
+site_name: My Docs
+theme:
+  name: material
+
+  site_name: 四月慕蝶的网站
+site_url: https://symudie.github.io
+site_author: Azur3v1
+site_description: 喵喵喵喵喵
+
+site_name: symudie
+site_url: https://symudie.github.io//symudie.github.io/
+
+
+theme:
+  name: material
+  icon:
+    edit: material/pencil
+  features:
+    - content.action.edit
+    - content.code.copy
+    - navigation.tracking
+    - navigation.expand
+    - navigation.top
+    - navigation.footer
+  font:
+    code: JetBrains Mono
+    text: JetBrains Mono
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+
+nav:
+  - 首页: index.md
+  - ZJU:
+      - 大一:
+          - 计算机系统: ZJU/大一/sys1.md
+          - 信安原: ZJU/大一/信安原.md
+          - 数据结构基础: ZJU/大一/fds.md
+      - CTF101:
+          - Web: ZJU/短学期/web.md
+      - 大二:
+          - 计算机系统II: ZJU/大二/sys2.md
+          - 密码: ZJU/大二/crypto.md
+          - 高级数据结构: ZJU/大二/ads.md
+  - Skills:
+      - cs61a: skills/cs61a.md
+      - docker: skills/docker.md
+      - git: skills/git.md
+
+theme:
+  name: material
+  # [切换日间模式和夜间模式]
+  # https://squidfunk.github.io/mkdocs-material/setup/changing-the-colors/#color-palette-toggle
+  palette:
+    # 日间模式
+    - scheme: default
+      # 主颜色
+      # https://squidfunk.github.io/mkdocs-material/setup/changing-the-colors/#primary-color
+      primary: indigo
+      # 链接等可交互元件的高亮色
+      # https://squidfunk.github.io/mkdocs-material/setup/changing-the-colors/#accent-color
+      accent: orange
+      toggle:
+        # 图标
+        icon: material/weather-night
+        # 鼠标悬浮提示
+        name: 切换至夜间模式
+    # 夜间模式
+    - scheme: slate
+      primary: indigo
+      accent: orange
+      toggle:
+        icon: material/weather-sunny
+        name: 切换至日间模式
+  features:
+    # 使用 Tab 来进行分类
+    # https://squidfunk.github.io/mkdocs-material/setup/setting-up-navigation/#navigation-tabs
+    - navigation.tabs
+    # 返回顶部的按钮，在上滑时出现
+    # https://squidfunk.github.io/mkdocs-material/setup/setting-up-navigation/#back-to-top-button
+    - navigation.top
+    # 给每个 Tab 添加一个 index.md，且在点击 Tab 时打开
+    # https://squidfunk.github.io/mkdocs-material/setup/setting-up-navigation/#section-index-pages-with-section-index-pages
+    - navigation.indexes
+    # 打开 Tab 时左侧目录全部展开
+    # https://squidfunk.github.io/mkdocs-material/setup/setting-up-navigation/#navigation-expansion
+    - navigation.expand
+    # 搜索输入一些字母时推荐补全整个单词
+    # https://squidfunk.github.io/mkdocs-material/setup/setting-up-site-search/#search-suggestions
+    - search.suggest
+    # 搜索的关键词文章加入高亮
+    # https://squidfunk.github.io/mkdocs-material/setup/setting-up-site-search/#search-highlighting
+    - search.highlight
+    # 可以通过按钮复制代码
+    # https://squidfunk.github.io/mkdocs-material/reference/code-blocks/#code-copy-button
+    - content.code.copy
+    # [点击按钮跳转至 GitHub 修改 Markdown 源文件]
+    # https://squidfunk.github.io/mkdocs-material/setup/adding-a-git-repository/#code-actions
+    - content.action.edit
+  language: zh # 语言
