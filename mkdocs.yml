@@ -1,4 +1,5 @@
 site_name: My Docs
+site_url: https://symudie.github.io/Azur3lily
 
 theme:
   name: material
