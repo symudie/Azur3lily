@@ -2,15 +2,6 @@ site_name: My Docs
 theme:
   name: material
 
-  site_name: 四月慕蝶的网站
-site_url: https://symudie.github.io
-site_author: Azur3v1
-site_description: 喵喵喵喵喵
-
-site_name: symudie
-site_url: https://symudie.github.io//symudie.github.io/
-
-
 theme:
   name: material
   icon:
