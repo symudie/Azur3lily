@@ -115,3 +115,9 @@ XML的不当拼接+解析 （doc，pdf，jpg）
 #### CSRF
 
 CSRF token
+
+# Web专题1： 用户侧攻击
+
+## CSRF
+
+Cookie
