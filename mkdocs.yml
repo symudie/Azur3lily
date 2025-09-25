@@ -1,31 +1,10 @@
 site_name: My Docs
 site_url: https://symudie.github.io/Azur3lily
+repo_url: https://github.com/symudie/Azur3lily
+repo_name: symudie/Azur3lily
+edit_uri: edit/main/docs/
 
-theme:
-  name: material
-  icon:
-    edit: material/pencil
-  features:
-    - content.action.edit
-    - content.code.copy
-    - navigation.tracking
-    - navigation.expand
-    - navigation.top
-    - navigation.footer
-  font:
-    code: JetBrains Mono
-    text: JetBrains Mono
-  palette:
-    - media: "(prefers-color-scheme: light)"
-      scheme: default
-      toggle:
-        icon: material/brightness-7
-        name: Switch to dark mode
-    - media: "(prefers-color-scheme: dark)"
-      scheme: slate
-      toggle:
-        icon: material/brightness-4
-        name: Switch to light mode
+# 主题配置已移动到下方，删除此处重复配置
 
 nav:
   - 首页: index.md
@@ -47,7 +26,11 @@ nav:
 
 theme:
   name: material
-  # [切换日间模式和夜间模式]
+  icon:
+    edit: material/pencil
+  font:
+    code: JetBrains Mono
+    text: JetBrains Mono
   # https://squidfunk.github.io/mkdocs-material/setup/changing-the-colors/#color-palette-toggle
   palette:
     # 日间模式
@@ -95,4 +78,8 @@ theme:
     # [点击按钮跳转至 GitHub 修改 Markdown 源文件]
     # https://squidfunk.github.io/mkdocs-material/setup/adding-a-git-repository/#code-actions
     - content.action.edit
+    # 内容操作跟踪
+    - navigation.tracking
+    # 导航页脚
+    - navigation.footer
   language: zh # 语言
