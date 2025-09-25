@@ -14,7 +14,7 @@
         <link rel="prev" href="../../%E5%A4%A7%E4%B8%80/fds/">
       
       
-        <link rel="next" href="../../%E5%A4%A7%E4%BA%8C/sys2/">
+        <link rel="next" href="../Pwn/">
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
@@ -554,6 +554,12 @@
       
         
       
+        
+      
+        
+      
+        
+      
     
     
     
@@ -573,7 +579,7 @@
   
   
   <span class="md-ellipsis">
-    CTF101
+    短学期(CTF101)
     
   </span>
   
@@ -584,7 +590,7 @@
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2_2">
             <span class="md-nav__icon md-icon"></span>
-            CTF101
+            短学期(CTF101)
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -902,6 +908,75 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Pwn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Pwn
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Reverse/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Reverse
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../misc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Misc
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1060,6 +1135,8 @@
       
         
       
+        
+      
     
     
     
@@ -1155,6 +1232,29 @@
   
   <span class="md-ellipsis">
     git
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../skills/mac/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    mac
     
   </span>
   
@@ -1471,32 +1571,32 @@
   
 
 
-<h1 id="web">Web</h1>
-<h2 id="_1">基础知识</h2>
-<h3 id="_2">通信原理</h3>
-<h4 id="_3">网络基础知识</h4>
-<h5 id="sever-client">Sever-Client架构</h5>
-<h5 id="burpsuite">数据包（抓包Burpsuite）</h5>
+<h1 id="web">Web<a class="headerlink" href="#web" title="Permanent link">&para;</a></h1>
+<h2 id="_1">基础知识<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<h3 id="_2">通信原理<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<h4 id="_3">网络基础知识<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h4>
+<h5 id="sever-client">Sever-Client架构<a class="headerlink" href="#sever-client" title="Permanent link">&para;</a></h5>
+<h5 id="burpsuite">数据包（抓包Burpsuite）<a class="headerlink" href="#burpsuite" title="Permanent link">&para;</a></h5>
 <p>层级分装 与内容无关</p>
-<h5 id="tcpip">TCP/IP四层模型 三次握手</h5>
+<h5 id="tcpip">TCP/IP四层模型 三次握手<a class="headerlink" href="#tcpip" title="Permanent link">&para;</a></h5>
 <p><img alt="alt text" src="../image.png" /></p>
 <p>data-&gt;TCP包-&gt;IP包-&gt;以太网包
 应用层 传输层 网络层 网络接口层</p>
-<h5 id="ipv4ipv6ip">网际协议：IPv4，IPv6（IP）</h5>
+<h5 id="ipv4ipv6ip">网际协议：IPv4，IPv6（IP）<a class="headerlink" href="#ipv4ipv6ip" title="Permanent link">&para;</a></h5>
 <p>127开头回环地址 127.0.0.1
 0.0.0.0本机的ip(监听)</p>
 <p>NAT协议：内网IP主机共享一个公网IPv4</p>
 <p>DNS服务（应用层的协议）：域名-&gt;IP</p>
 <p>//网络层</p>
-<h5 id="_4">端口：多路复用</h5>
+<h5 id="_4">端口：多路复用<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h5>
 <p>443 永恒之蓝
 3389 远程桌面</p>
 <p><code>netsta -ano</code>查看端口</p>
-<h5 id="tcpudp">TCP和UDP</h5>
+<h5 id="tcpudp">TCP和UDP<a class="headerlink" href="#tcpudp" title="Permanent link">&para;</a></h5>
 <p>TCP：字节流，可靠
 UDP：低开销
 //传输层</p>
-<h5 id="http">HTTP</h5>
+<h5 id="http">HTTP<a class="headerlink" href="#http" title="Permanent link">&para;</a></h5>
 <p>格式：
 start line
 Headers
@@ -1508,36 +1608,36 @@ body</p>
 3xx 重定向-需要采取进一步的措施以完成请求
 4xx 客户端错误-请求包含语法错误或无法完成
 5xx 服务器错误-服务器未能完成明显有效的请求</p>
-<h4 id="_5">前后端入门</h4>
+<h4 id="_5">前后端入门<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h4>
 <p>php：服务端语言</p>
 <p>能看懂就行hhhh</p>
 <p>html </p>
 <p>前端语言，真不难。还要会JavaScript，，</p>
 <p>好好学burpsuite（hhhh）。</p>
-<h3 id="_6">前端后端漏洞</h3>
-<h4 id="_7">逻辑漏洞</h4>
+<h3 id="_6">前端后端漏洞<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<h4 id="_7">逻辑漏洞<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h4>
 <p>注册，支付，修改密码，信息查询。“审计”</p>
-<h5 id="_8">支付漏洞</h5>
+<h5 id="_8">支付漏洞<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h5>
 <p>为了节约成本，会带有price参数来控制需要付多少钱。可通过抓包修改某特定参数值修改支付金额，涉及第三方平台。</p>
-<h5 id="_9">越权漏洞</h5>
+<h5 id="_9">越权漏洞<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h5>
 <p>越权修改</p>
-<h4 id="_10">注入漏洞</h4>
+<h4 id="_10">注入漏洞<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h4>
 <p>重要重要</p>
-<h5 id="sql">SQL注入</h5>
+<h5 id="sql">SQL注入<a class="headerlink" href="#sql" title="Permanent link">&para;</a></h5>
 <p>SQL指令的不当拼接+解析
 （lab0-2不算分芜湖）</p>
-<h5 id="xxe">XXE注入</h5>
+<h5 id="xxe">XXE注入<a class="headerlink" href="#xxe" title="Permanent link">&para;</a></h5>
 <p>XML的不当拼接+解析 （doc，pdf，jpg）</p>
-<h4 id="ssrf">SSRF</h4>
-<h4 id="xss">XSS</h4>
-<h5 id="xss_1">存储型XSS</h5>
+<h4 id="ssrf">SSRF<a class="headerlink" href="#ssrf" title="Permanent link">&para;</a></h4>
+<h4 id="xss">XSS<a class="headerlink" href="#xss" title="Permanent link">&para;</a></h4>
+<h5 id="xss_1">存储型XSS<a class="headerlink" href="#xss_1" title="Permanent link">&para;</a></h5>
 <p>数据被存储在服务器上，用户访问服务数据被自动投送/触发</p>
-<h5 id="xss_2">反射型XSS</h5>
+<h5 id="xss_2">反射型XSS<a class="headerlink" href="#xss_2" title="Permanent link">&para;</a></h5>
 <p>数据没有被存储在服务器上，在传参时给出(通常依靠链接传播)</p>
-<h4 id="csrf">CSRF</h4>
+<h4 id="csrf">CSRF<a class="headerlink" href="#csrf" title="Permanent link">&para;</a></h4>
 <p>CSRF token</p>
-<h1 id="web1">Web专题1： 用户侧攻击</h1>
-<h2 id="csrf_1">CSRF</h2>
+<h1 id="web1">Web专题1： 用户侧攻击<a class="headerlink" href="#web1" title="Permanent link">&para;</a></h1>
+<h2 id="csrf_1">CSRF<a class="headerlink" href="#csrf_1" title="Permanent link">&para;</a></h2>
 <p>Cookie</p>
 
 
@@ -1591,13 +1691,13 @@ body</p>
         
         
           
-          <a href="../../%E5%A4%A7%E4%BA%8C/sys2/" class="md-footer__link md-footer__link--next" aria-label="下一页: 计算机系统II">
+          <a href="../Pwn/" class="md-footer__link md-footer__link--next" aria-label="下一页: Pwn">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 下一页
               </span>
               <div class="md-ellipsis">
-                计算机系统II
+                Pwn
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -1637,6 +1737,12 @@ body</p>
     
     
       <script src="../../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>
