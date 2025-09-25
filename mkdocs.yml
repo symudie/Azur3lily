@@ -15,6 +15,9 @@ nav:
           - 数据结构基础: ZJU/大一/fds.md
       - 短学期(CTF101):
           - Web: ZJU/短学期/web.md
+          - Pwn: ZJU/短学期/Pwn.md
+          - Reverse: ZJU/短学期/Reverse.md
+          - Misc: ZJU/短学期/misc.md
       - 大二:
           - 计算机系统II: ZJU/大二/sys2.md
           - 密码: ZJU/大二/crypto.md
@@ -23,6 +26,7 @@ nav:
       - cs61a: skills/cs61a.md
       - docker: skills/docker.md
       - git: skills/git.md
+      - mac: skills/mac.md
 
 theme:
   name: material
