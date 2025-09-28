@@ -1,6 +1,8 @@
 
 # 高级数据结构（ADS）
 
+# lec1
+
 ## 平衡搜索树
 
 ### Binary Search Tree (BST)
@@ -101,3 +103,6 @@ Why this works:
 E amortized = E real-cost + k(phi end - phi start)
 
 Then lts go to the proof of the splay tree
+
+# lec3
+
