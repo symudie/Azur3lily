@@ -19,9 +19,9 @@ nav:
           - Reverse: ZJU/短学期/Reverse.md
           - Misc: ZJU/短学期/misc.md
       - 大二:
-          - 计算机系统II: ZJU/大二/sys2.md
+          - 计算机系统II: ZJU/大二/sys2/sys2.md
           - 密码: ZJU/大二/crypto.md
-          - 高级数据结构: ZJU/大二/ads.md
+          - 高级数据结构: ZJU/大二/ads/ads.md
   - Skills:
       - cs61a: skills/cs61a.md
       - docker: skills/docker.md

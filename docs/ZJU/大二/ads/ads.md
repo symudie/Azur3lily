@@ -1,43 +1,38 @@
-# ads
 
-# 平衡搜索树
+# 高级数据结构（ADS）
 
-## Binary Search Tree (BST)
+## 平衡搜索树
 
-- Tree operations are closely related to tree depth (n-1).
+### Binary Search Tree (BST)
+树的操作与树的深度密切相关，最坏情况下深度为 n-1。
 
-## Balanced BSTs
+### Balanced BSTs
+- 加速查找
+- 避免最坏 O(N) 复杂度
 
-- Speed up searching
-- Avoid the worst case O(N) complexity
+## AVL 树（Adelson-Velskii-Landis Trees）
 
-## AVL Trees (Adelson-Velskii-Landis Trees)
+**高度平衡定义**：
+1. 左右子树均为高度平衡树
+2. 左右子树高度差 ≤ 1
 
-A tree is **height-balanced** if:
-1. T left and T right are height-balanced
-2. h left - h right ≤ 1
+**AVL 树定义**：平衡因子 BF(node) = h_left - h_right，AVL 树要求任意节点 BF ∈ {-1, 0, 1}。
 
-**Definition of AVL trees**: Balanced factor BF(node) = h_left - h_right. In an AVL tree, BF(any node) ∈ {-1, 0, 1}.
+**示例**：维护树的平衡，当某节点 BF 不满足时，进行一次旋转（single rotation）使其重新平衡。
 
-**Example**: 维护一个树，当某个节点BF无法满足的时候，进行一次旋转，使之重新平衡 (single rotation)
+#### RR 旋转
+![RR旋转示例](images/image.png)
 
-### RR rotation
+#### LL 旋转
+![LL旋转示例](images/image-1.png)
 
-![AVL tree RR rotation example](images/image.png)
+#### LR 旋转
+![LR旋转示例](images/image-2.png)
 
-### LL rotation
+#### RL 旋转
+![RL旋转示例](images/image-3.png)
 
-![alt text](images/image-1.png)
-
-### LR rotation
-
-![alt text](images/image-2.png)
-
-### RL rotation
-
-![alt text](images/image-3.png)
-
-about the worst case for AVL trees.
+关于 AVL 树的最坏情况。
 
 just like Fibonacci numbers: N (h) = N (h-1) + N (h-2) + 1
 也就是斐波那契数减去一。
