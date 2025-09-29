@@ -58,7 +58,8 @@ theme:
         icon: material/weather-sunny
         name: 切换至日间模式
   features:
-    # 使用 Tab 来进行分类
+  # 使用 Tab 来进行分类
+  - toc.integrate
     # https://squidfunk.github.io/mkdocs-material/setup/setting-up-navigation/#navigation-tabs
     - navigation.tabs
     # 返回顶部的按钮，在上滑时出现

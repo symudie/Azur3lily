@@ -15,7 +15,7 @@
 
 ##### TCP/IP四层模型 三次握手
 
-![alt text](image.png)
+![alt text](img1.png)
 
 data->TCP包->IP包->以太网包
 应用层 传输层 网络层 网络接口层
