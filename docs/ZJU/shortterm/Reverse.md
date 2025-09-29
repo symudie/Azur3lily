@@ -4,7 +4,7 @@
 
 ### 编译 VS 汇编
 
-![alt text](img2.png)
+![alt text](imgs/img2.png)
 
 反汇编（准确，查表）
 反编译（不准确）
@@ -34,9 +34,9 @@ gcc hello.c -o hello
 反编译! :F5
 
 
-![alt text](img3.png)
+![alt text](imgs/img3.png)
 
-![alt text](img4.png)
+![alt text](imgs/img4.png)
 
 ## z3-solver
 
