@@ -195,10 +195,25 @@ internal nodes only contain indexs to help find the right leaf.This way can lead
 
 #### Insertion
 
+1. **Locate the Leaf Node**: Start from the root and use internal node indexes to find the target leaf node.
+2. **Insert and Split**:
+    - If the leaf node is not full (< M keys), insert the new key in order.
+    - If the leaf node is full (= M keys):
+        - Select the middle key (the ⌈(M+1)/2⌉-th key) as the "split key" and divide the leaf into two nodes.
+        - Promote the split key to the parent node, which now points to the two new child nodes.
+        - If the parent is also full, recursively split upwards; if the root splits, the tree height increases by one.
+3. **Complexity**: Each insertion requires one downward search and at most one upward split, resulting in O(log N) time overall.
 
 #### Deletion
 
-
+1. **Locate and Delete**: Start from the root, find the leaf node containing the target key, and remove it (maintaining key order).
+2. **Check Leaf Node Size**:
+    - If the leaf node still has at least ⌈M/2⌉ keys, deletion is complete.
+    - If the leaf node has fewer than ⌈M/2⌉ keys:
+      - **Borrow from Sibling**: Try to borrow a key from an adjacent sibling (update the parent’s index key to maintain correct intervals).
+      - **Merge with Sibling**: If siblings also have only ⌈M/2⌉ keys, merge the current node with a sibling and remove the corresponding index key from the parent.
+      - **Recursive Repair**: If the parent now has too few keys (< ⌈M/2⌉), recursively repair up the tree. If the root becomes empty, remove it and decrease the tree height.
+3. **Exam Note**: For assignments and exams, 2-3 trees and 2-3-4 trees are treated as B+ trees. By default, the allowed number of keys in leaf nodes equals the allowed number of children in internal nodes.
 ## Take-home messages
 
 ### Red-black trees:
