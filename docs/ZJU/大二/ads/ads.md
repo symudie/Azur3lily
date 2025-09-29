@@ -22,17 +22,18 @@
 
 **示例**：维护树的平衡，当某节点 BF 不满足时，进行一次旋转（single rotation）使其重新平衡。
 
+
 #### RR 旋转
-![RR旋转示例](images/image.png)
+![RR旋转示例](images/avl_rr.png)
 
 #### LL 旋转
-![LL旋转示例](images/image-1.png)
+![LL旋转示例](images/avl_ll.png)
 
 #### LR 旋转
-![LR旋转示例](images/image-2.png)
+![LR旋转示例](images/avl_lr.png)
 
 #### RL 旋转
-![RL旋转示例](images/image-3.png)
+![RL旋转示例](images/avl_rl.png)
 
 关于 AVL 树的最坏情况。
 
@@ -106,3 +107,40 @@ Then lts go to the proof of the splay tree
 
 # lec3
 
+## Red-Black trees
+
+### introduction
+
+M-ary Search Trees：search insert delete
+
+Then Reduce 2-3-4 trees to BSTs:transform 3- and 4- nodes into 2- nodes(用二叉搜索树来模拟多叉搜索树)
+
+`Red-black trees`
+1. every node is either black or red
+2. root is black
+3. every leaf is black
+4. if node is red then both children are black
+5. all simple paths from the node to descendant leaves contain the same number of black nodes.
+
+[lemma]: with N internal nodes has height at most 2ln(N+1)
+
+bh(tree) >= h(tree)/2
+
+### insertion and deletion(想一下都觉得难，，)
+
+看起来很大，但是转起来很省力，主要在于修改红黑。
+听不懂（）
+
+![BST结构示例](images/bs_tree.png)
+
+deletion和bst的deletion差不多，color fixing process
+
+![AVL树性质示例](images/avl_property.png)
+
+原则上不会出红黑树o，，
+
+
+
+## B & B+ trees
+
+## Take-home messages
