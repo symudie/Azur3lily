@@ -10,18 +10,18 @@ nav:
   - 首页: index.md
   - ZJU:
     - year1:
-      - Computer System: ZJU/year1/sys1_main.md
-      - InfoSec: ZJU/year1/info_sec.md
-      - FDS: ZJU/year1/fds_main.md
+  - Computer System: ZJU/year1/sys1.md
+  - InfoSec: ZJU/year1/info_sec.md
+  - FDS: ZJU/year1/fds.md
     - shortterm:
       - Web: ZJU/shortterm/web.md
       - Pwn: ZJU/shortterm/Pwn.md
       - Reverse: ZJU/shortterm/Reverse.md
       - Misc: ZJU/shortterm/misc.md
     - year2:
-      - Computer System II: ZJU/year2/sys2/sys2_main.md
-      - Crypto: ZJU/year2/crypto_main.md
-      - Advanced Data Structure: ZJU/year2/ads/ads_main.md
+  - Computer System II: ZJU/year2/sys2/sys2.md
+  - Crypto: ZJU/year2/crypto.md
+  - Advanced Data Structure: ZJU/year2/ads/ads.md
   - Skills:
       - cs61a: skills/cs61a.md
       - docker: skills/docker.md
