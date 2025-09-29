@@ -24,16 +24,16 @@
 
 
 #### RR 旋转
-![RR旋转示例](images/avl_rr.png)
+![RR旋转示例](imgs/avl_rr.png)
 
 #### LL 旋转
-![LL旋转示例](images/avl_ll.png)
+![LL旋转示例](imgs/avl_ll.png)
 
 #### LR 旋转
-![LR旋转示例](images/avl_lr.png)
+![LR旋转示例](imgs/avl_lr.png)
 
 #### RL 旋转
-![RL旋转示例](images/avl_rl.png)
+![RL旋转示例](imgs/avl_rl.png)
 
 关于 AVL 树的最坏情况。
 
@@ -134,7 +134,7 @@ proof: bh(tree) >= h(tree)/2
 
 #### insert
 
-![BST结构示例](images/bs_tree.png)
+![BST结构示例](imgs/bs_tree.png)
 
 1. 插入非根默认染红，若是根，则染成黑色
 
@@ -151,7 +151,7 @@ proof: bh(tree) >= h(tree)/2
 
 deletion和bst的deletion差不多，color fixing process
 
-![AVL树性质示例](images/avl_property.png)
+![AVL树性质示例](imgs/avl_property.png)
 
 1. 没有孩子--直接删除
 

@@ -11,7 +11,7 @@ The difference between stages (IF - ID - EX) may cause time consumption or resou
 为了解决内存访问冲突（例如 instruction cache 与 data cache 共享，或指令存储器 imem 与数据存储器 dmem 冲突），可以在主存控制器与指令译码单元之间增加指令缓冲区（instruction buffer）。
 缓冲区可以临时存放多条取出的指令，降低取指与访存之间的冲突，从而减少流水线停顿。
 
-![Single Overlapping Execution](images/single_overlapping_execution.png)
+![Single Overlapping Execution](imgs/single_overlapping_execution.png)
 
 buffer在进入与排空的时候一定会存在时间的浪费。
 
@@ -27,6 +27,6 @@ SCPU里并不是所有的指令都会用到五个阶段，于此存在部分浪�
 
 ## Inplementation of pipelining cpu(risc-v)
 
-![RISC-V Pipeline Implementation](images/riscv_pipeline_implementation.png)
+![RISC-V Pipeline Implementation](imgs/riscv_pipeline_implementation.png)
 
 

@@ -9,19 +9,19 @@ edit_uri: edit/main/docs/
 nav:
   - 首页: index.md
   - ZJU:
-      - 大一:
-          - 计算机系统: ZJU/大一/sys1.md
-          - 信安原: ZJU/大一/信安原.md
-          - 数据结构基础: ZJU/大一/fds.md
-      - 短学期(CTF101):
-          - Web: ZJU/短学期/web.md
-          - Pwn: ZJU/短学期/Pwn.md
-          - Reverse: ZJU/短学期/Reverse.md
-          - Misc: ZJU/短学期/misc.md
-      - 大二:
-          - 计算机系统II: ZJU/大二/sys2/sys2.md
-          - 密码: ZJU/大二/crypto.md
-          - 高级数据结构: ZJU/大二/ads/ads.md
+    - year1:
+      - Computer System: ZJU/year1/sys1_main.md
+      - InfoSec: ZJU/year1/info_sec.md
+      - FDS: ZJU/year1/fds_main.md
+    - shortterm:
+      - Web: ZJU/shortterm/web.md
+      - Pwn: ZJU/shortterm/Pwn.md
+      - Reverse: ZJU/shortterm/Reverse.md
+      - Misc: ZJU/shortterm/misc.md
+    - year2:
+      - Computer System II: ZJU/year2/sys2/sys2_main.md
+      - Crypto: ZJU/year2/crypto_main.md
+      - Advanced Data Structure: ZJU/year2/ads/ads_main.md
   - Skills:
       - cs61a: skills/cs61a.md
       - docker: skills/docker.md
