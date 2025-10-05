@@ -148,7 +148,7 @@ proof: bh(tree) >= h(tree)/2
     - RL：先右旋后左旋，儿-爷染色
 （感觉是个递归，直到每一次插入都到达根）
 
-#### delet
+#### delet（难）
 
 deletion和bst的deletion差不多，color fixing process
 
@@ -189,6 +189,10 @@ B 树的优点在于减少了磁盘 I/O 操作次数，适合存储大量数据�
 
 internal nodes only contain indexs to help find the right leaf.This way can lead to larger 叉数。
 
+![2-3tree](imgs/2-3tree.png)
+
+![2-3-4tree](imgs/2-3-4tree.png)
+
 #### Definition：
     1. the root is either a leaf or has between 2 and M children
     2. all nonleaf nodes have between M/2 and M nodes
@@ -228,3 +232,10 @@ each node.
  - Search trees with more branches. Suitable for reducing access 
  - cost on nodes, applications on database, secondary drives…
  - Reduce tree depth by increasing the number of branches.
+
+ # lec4
+
+ ## Priority queues
+
+ ### Review of binary heaps
+
