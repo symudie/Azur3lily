@@ -219,6 +219,175 @@ internal nodes only contain indexs to help find the right leaf.This way can lead
       - **Merge with Sibling**: If siblings also have only ⌈M/2⌉ keys, merge the current node with a sibling and remove the corresponding index key from the parent.
       - **Recursive Repair**: If the parent now has too few keys (< ⌈M/2⌉), recursively repair up the tree. If the root becomes empty, remove it and decrease the tree height.
 3. **Exam Note**: For assignments and exams, 2-3 trees and 2-3-4 trees are treated as B+ trees. By default, the allowed number of keys in leaf nodes equals the allowed number of children in internal nodes.
+
+### 代码实现（基于hw2.c）
+
+数据结构的设置
+```c
+typedef struct node {
+    int a[3];//用于存储数据 分裂的时候需要4个
+    int count;//数量
+    int isLeaf;//判断是否是叶子
+    struct node *children[4];//孩子指针
+} node;
+```
+
+插入
+```c
+
+//insert函数
+void insert(node **root, int k) {
+    //根
+    if (*root == NULL) {
+        *root = new_node(1);
+        (*root)->a[0] = k;
+        (*root)->count = 1;
+        return;
+    }
+
+    //提供参数以供插入
+    int repeat = 0;
+    int up = 0;
+    node *newRight = NULL;
+
+    //进行插入
+    insert_rec(*root, k, &up,&repeat, &newRight);
+
+    if(repeat==1)
+        printf("Key %d is duplicated\n", k);
+
+    //进行了分裂，创建一个新的根
+    if (newRight) { 
+        node *newRoot = new_node(0);
+        newRoot->a[0] = up;//上推
+        newRoot->count = 1;//根的数
+        newRoot->children[0] = *root;//旧的根
+        newRoot->children[1] = newRight;//新的右子
+        *root = newRoot;
+    }
+}
+
+void insert_rec(node *x, int k, int *up, int *repeat, node **newRight) {
+
+    //如果根是叶子
+    if (x->isLeaf) {
+
+        //遍历比较
+        for (int i = 0; i < x->count; i++) {
+            if (x->a[i] == k) {
+                *repeat = 1;
+                return;
+            }
+        }
+
+        int pos = 0;
+        while (pos < x->count && x->a[pos] < k) {
+            pos++;
+        }
+
+        //临时实现一个数组来存储
+        int temp[4];
+        for(int i = 0; i < pos; i++) 
+            temp[i] = x->a[i];
+        temp[pos] = k;
+
+        for(int i = pos; i < x->count; i++) 
+            temp[i+1] = x->a[i];
+
+        int cnt = x->count + 1;
+
+        //小于三个
+        if (cnt <= 3) {
+            for (int j = 0; j < cnt; j++) 
+                x->a[j] = temp[j];
+            x->count = cnt;
+        } 
+        //分裂
+        else { 
+            *newRight = new_node(1);
+            //左边处理
+            x->a[0] = temp[0]; 
+            x->a[1] = temp[1];
+            x->count = 2;
+            
+            //右边处理
+            (*newRight)->a[0] = temp[2]; 
+            (*newRight)->a[1] = temp[3];
+            (*newRight)->count = 2;
+            //上推
+            *up = (*newRight)->a[0];
+        }
+        return 0;
+    }
+
+    //根
+    int idx = 0;
+
+    //先查找子节点
+    while (idx < x->count && k >= x->a[idx]) {
+        idx++;
+    }
+
+    //在子节点进行插入
+    insert_rec(x->children[idx], k,up, repeat, newRight);
+
+    //如果孩子没有分裂
+    if (!*newRight) 
+        return 0;
+
+    //不然
+    int b[3]; 
+    node *tempchild[4]; 
+    int i;
+
+    //同上原理
+    for (i = 0; i < idx; i++) 
+        b[i] = x->a[i];
+    b[idx] = *up;
+    for (i = idx; i < x->count; i++) 
+        b[i+1] = x->a[i];
+
+    for (i = 0; i <= idx; i++) 
+        tempchild[i] = x->children[i];
+    
+    tempchild[idx+1] = *newRight;
+
+    for (i = idx+1; i <= x->count; i++) 
+        tempchild[i+1] = x->children[i];
+
+    int count2 = x->count + 1;
+
+    //再检查上移位置是否已满
+    if (count2 <= 2) {
+        for (i = 0; i < count2; i++)
+            x->a[i] = b[i];
+        for (i = 0; i <= count2; i++) 
+            x->children[i] = tempchild[i];
+        
+        x->count = count2;
+        *up = 0; 
+        *newRight = NULL;
+    } 
+    //反之分裂同上
+    else {
+        *newRight = new_node(0);
+        x->a[0] = b[0]; 
+        x->count = 1;
+        x->children[0] = tempchild[0]; 
+        x->children[1] = tempchild[1];
+        x->children[2] = x->children[3] = NULL;
+        (*newRight)->a[0] = b[2]; 
+        (*newRight)->count = 1;
+        (*newRight)->children[0] = tempchild[2]; 
+        (*newRight)->children[1] = tempchild[3];
+        
+        //上推
+        *up = b[1];
+    }
+}
+
+```
+
 ## Take-home messages
 
 ### Red-black trees:
@@ -233,9 +402,80 @@ each node.
  - cost on nodes, applications on database, secondary drives…
  - Reduce tree depth by increasing the number of branches.
 
- # lec4
+# lec4
 
- ## Priority queues
+## Priority queues
 
- ### Review of binary heaps
+### Review of binary heaps(其实我全忘了嘻嘻)
 
+Complete tree:Perfectly balanced.
+key in child >= key in parent 小根堆.
+
+### Leftist heaps(左斜堆) 
+
+speed up merging.
+
+[定义] 空路径长度（null path length，Npl(X)）是指从节点 X 出发，沿着其子节点一直走到遇到没有两个孩子的节点（即至少有一个孩子为 NULL）所经过的最短路径长度。对于空节点（NULL），规定 Npl(NULL) = –1。 
+
+[定义]左斜堆的性质是：对于堆中的每个节点 X，其左孩子的空路径长度（null path length）>= 右孩子的空路径长度。
+
+右子树r，总共至少有2的r次-1.
+
+```
+struct TreeNode 
+{ 
+ElementType Element; 
+PriorityQueue Left; 
+PriorityQueue Right; 
+int Npl; 
+} ;
+```
+
+Merge 其实就是递归实现（开什么玩笑怎么有点难，，，，
+```
+PriorityQueue Merge ( PriorityQueue H1, PriorityQueue H2 ) 
+{ 
+if ( H1 == NULL ) return H2;
+if ( H2 == NULL ) return H1;
+if ( H1->Element < H2->Element ) return Merge1( H1, H2 ); 
+else return Merge1( H2, H1 ); 
+}
+```
+
+### Skew heaps（斜堆）
+
+不适合递归！
+
+Merge: Always swap the left and right children except that the 
+largest of all the nodes on the right paths does not 
+have its children swapped. No Npl.
+
+It is an open problem to determine precisely the expected right 
+path length of both leftist and skew heaps.
+
+### Binomial Queues(优化skewheaps的插入操作)
+
+定义：二项队列不是堆序树，而是一组堆序树的集合，被称为森林。每棵堆序树都是一棵二项树。
+
+类似于二进制处理
+![binomial queues](imgs/binomial%20queues.png)
+
+### Comparison
+
+![analyse](imgs/analyse.png)
+
+
+### Take-Home Messages
+
+#### Leftist heaps:
+• Reduce merge cost to O(log N) by building unbalanced heaps, and put all the computation on the right (light) paths.
+
+#### Skew heaps: 
+• Avoiding skewness checking by always flipping left and right. Guarantee amortized cost O(log N).
+
+#### Binomial queues:
+• Improve the amortized cost of insertion into O(1). Using the idea of binary counter addition.
+
+#### Comparison
+
+![analyse](imgs/analyse.png)

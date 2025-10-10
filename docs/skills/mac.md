@@ -27,23 +27,6 @@ brew list               # 列出已安装软件
 brew search <关键词>     # 搜索软件
 ```
 
-!!! warning "Git 版本管理说明"
-    通过 `brew install git` 安装的 Git 会与 macOS 系统自带的 Git 共存：
-    
-    - **Homebrew Git**: `/opt/homebrew/bin/git` (版本更新，推荐使用)
-    - **系统 Git**: `/usr/bin/git` (Apple 维护版本)
-    
-    由于 Homebrew 路径优先级更高，默认会使用 Homebrew 版本，无冲突！
-    
-    ```bash
-    # 检查当前使用的 Git
-    which git                    # 显示: /opt/homebrew/bin/git
-    git --version               # 显示: git version 2.51.0
-    
-    # 显式使用系统 Git（如果需要）
-    /usr/bin/git --version      # 显示: git version 2.39.5 (Apple Git-154)
-    ```
-
 ### 🎯 实用软件推荐
 
 === "开发工具"
