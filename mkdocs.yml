@@ -1,4 +1,4 @@
-site_name: My Docs
+site_name: Azur3lily's record
 site_url: https://symudie.github.io/Azur3lily
 repo_url: https://github.com/symudie/Azur3lily
 repo_name: symudie/Azur3lily
@@ -8,21 +8,21 @@ edit_uri: edit/main/docs/
 
 nav:
   - 首页: index.md
-  - ZJU:
-    - year1:
-      - Computer System: ZJU/year1/sys1.md
-      - InfoSec: ZJU/year1/info_sec.md
-      - FDS: ZJU/year1/fds.md
-    - shortterm:
+  - 浙江大学:
+    - 大一:
+      - 计算机系统I: ZJU/year1/sys1.md
+      - 信息安全原理和数学基础: ZJU/year1/info_sec.md
+      - 数据结构基础与算法分析: ZJU/year1/fds.md
+    - 短学期:
       - Web: ZJU/shortterm/web.md
       - Pwn: ZJU/shortterm/Pwn.md
       - Reverse: ZJU/shortterm/Reverse.md
       - Misc: ZJU/shortterm/misc.md
-    - year2:
-      - Computer System II: ZJU/year2/sys2/sys2.md
-      - Crypto: ZJU/year2/crypto.md
-      - Advanced Data Structure: ZJU/year2/ads/ads.md
-  - Skills:
+    - 大二:
+      - 计算机系统II: ZJU/year2/sys2/sys2.md
+      - 密码学: ZJU/year2/crypto/crypto.md
+      - 高级数据结构与算法分析: ZJU/year2/ads/ads.md
+  - 技能:
     - cs61a: skills/cs61a.md
     - docker: skills/docker.md
     - git: skills/git.md
@@ -114,5 +114,12 @@ markdown_extensions:
 # Load MathJax for rendering LaTeX math (using CDN). The small config file sets
 # delimiters for inline ($...$) and display ($$...$$) math.
 extra_javascript:
+  - js/mathjax-config.js
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+extra_css:
+  - stylesheets/extra.css
+  
+extra_javascript:
+  - js/page-toc.js
   - js/mathjax-config.js
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js

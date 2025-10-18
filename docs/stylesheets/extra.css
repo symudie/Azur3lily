@@ -1,0 +1,33 @@
+/* Right-side page TOC */
+.page-toc {
+  position: fixed;
+  top: 100px;
+  right: 24px;
+  width: 220px;
+  max-height: calc(100vh - 140px);
+  overflow: auto;
+  padding: 12px;
+  background: rgba(255,255,255,0.96);
+  border: 1px solid rgba(0,0,0,0.08);
+  border-radius: 8px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+  font-size: 14px;
+  z-index: 999;
+}
+.page-toc h4 {
+  margin: 0 0 8px 0;
+  font-size: 13px;
+}
+.page-toc ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.page-toc li { margin: 6px 0; }
+.page-toc a { color: #333; text-decoration: none; }
+.page-toc a:hover { text-decoration: underline; }
+
+/* Hide on narrow screens */
+@media (max-width: 900px) {
+  .page-toc { display: none; }
+}
