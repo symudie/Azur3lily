@@ -1,33 +1,52 @@
-/* Right-side page TOC */
+/* Page layout: content + right column TOC */
+/* Ensure parent main area can host two columns */
+.md-main {
+  display: flex;
+  align-items: flex-start;
+}
+
+.md-content {
+  flex: 1 1 auto;
+  min-width: 0; /* prevent overflow */
+}
+
+/* Right-side page TOC column */
+.page-toc-column {
+  width: 240px;
+  margin-left: 24px;
+  flex: 0 0 240px;
+}
+
 .page-toc {
-  position: fixed;
-  top: 100px;
-  right: 24px;
-  width: 220px;
-  max-height: calc(100vh - 140px);
+  position: sticky;
+  top: 88px;
+  max-height: calc(100vh - 100px);
   overflow: auto;
   padding: 12px;
-  background: rgba(255,255,255,0.96);
-  border: 1px solid rgba(0,0,0,0.08);
+  background: var(--md-default-bg, #fff);
+  border: 1px solid rgba(0,0,0,0.06);
   border-radius: 8px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.04);
   font-size: 14px;
-  z-index: 999;
 }
+
 .page-toc h4 {
   margin: 0 0 8px 0;
   font-size: 13px;
 }
+
 .page-toc ul {
   list-style: none;
   padding: 0;
   margin: 0;
 }
+
 .page-toc li { margin: 6px 0; }
-.page-toc a { color: #333; text-decoration: none; }
+.page-toc a { color: var(--md-default-foreground, #333); text-decoration: none; }
 .page-toc a:hover { text-decoration: underline; }
 
-/* Hide on narrow screens */
+/* On narrow screens, revert to single column (hide TOC) */
 @media (max-width: 900px) {
-  .page-toc { display: none; }
+  .md-main { display: block; }
+  .page-toc-column { display: none; }
 }
