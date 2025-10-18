@@ -99,8 +99,8 @@ markdown_extensions:
   - toc:
       permalink: true
   - pymdownx.arithmatex:
-    generic: true
-    inline_syntax: true
+      generic: true
+      inline_syntax: true
   - pymdownx.details
   - pymdownx.highlight:
       anchor_linenums: true
