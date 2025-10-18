@@ -89,37 +89,60 @@ theme:
     - navigation.footer
   language: zh # 语言
 
-# Markdown 扩展配置
+# Markdown 扩展配置（采用用户示例，包含 pymdownx 系列扩展）
 markdown_extensions:
-  - admonition
-  - attr_list
-  - def_list
-  - footnotes
-  - md_in_html
   - toc:
       permalink: true
+      toc_depth: 4
+  - meta
+  - def_list
+  - attr_list
+  - md_in_html
+  - sane_lists
+  - admonition
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.tilde
+  - pymdownx.critic
+  - pymdownx.details
+  - pymdownx.snippets
+  - pymdownx.magiclink
+  - pymdownx.superfences
+  - pymdownx.inlinehilite
+  - neoteroi.projects
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+      clickable_checkbox: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+      linenums: true
   - pymdownx.arithmatex:
       generic: true
       inline_syntax:
         - dollar
         - round
-  - pymdownx.details
-  - pymdownx.highlight:
-      anchor_linenums: true
-  - pymdownx.inlinehilite
-  - pymdownx.superfences
-  - pymdownx.tabbed:
-      alternate_style: true
 
-# Load MathJax for rendering LaTeX math (using CDN). The small config file sets
-# delimiters for inline ($...$) and display ($$...$$) math.
+plugins:
+  - search
+  - heti:
+      extra_skipped_class:
+        - arithmatex
+
+# Use KaTeX (official CDN) + auto-render for math rendering
 extra_javascript:
-  - js/mathjax-config.js
-  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
-extra_css:
-  - stylesheets/extra.css
-  
-extra_javascript:
+  - https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js
+  - https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js
+  - js/katex.js
   - js/page-toc.js
-  - js/mathjax-config.js
-  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
+extra_css:
+  - https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css
+  - https://fonts.googleapis.com/css?family=Roboto:500,500i,600,600i&display=fallback
+  - css/custom.css
+  - css/neoteroi-mkdocs.css
+  - stylesheets/extra.css
