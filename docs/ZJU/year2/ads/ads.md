@@ -234,7 +234,6 @@ typedef struct node {
 
 插入
 ```c
-
 //insert函数
 void insert(node **root, int k) {
     //根
@@ -446,12 +445,9 @@ else return Merge1( H2, H1 );
 
 不适合递归！
 
-Merge: Always swap the left and right children except that the 
-largest of all the nodes on the right paths does not 
-have its children swapped. No Npl.
+Merge: Always swap the left and right children except that the largest of all the nodes on the right paths does not have its children swapped. No Npl.
 
-It is an open problem to determine precisely the expected right 
-path length of both leftist and skew heaps.
+It is an open problem to determine precisely the expected right path length of both leftist and skew heaps.
 
 ### Binomial Queues(优化skewheaps的插入操作)
 

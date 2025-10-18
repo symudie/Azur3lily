@@ -58,8 +58,8 @@ theme:
         icon: material/weather-sunny
         name: 切换至日间模式
   features:
-  # 使用 Tab 来进行分类
-  - toc.integrate
+    # 使用 Tab 来进行分类
+    - toc.integrate
     # https://squidfunk.github.io/mkdocs-material/setup/setting-up-navigation/#navigation-tabs
     - navigation.tabs
     # 返回顶部的按钮，在上滑时出现
@@ -99,7 +99,8 @@ markdown_extensions:
   - toc:
       permalink: true
   - pymdownx.arithmatex:
-      generic: true
+    generic: true
+    inline_syntax: true
   - pymdownx.details
   - pymdownx.highlight:
       anchor_linenums: true
@@ -107,3 +108,9 @@ markdown_extensions:
   - pymdownx.superfences
   - pymdownx.tabbed:
       alternate_style: true
+
+# Load MathJax for rendering LaTeX math (using CDN). The small config file sets
+# delimiters for inline ($...$) and display ($$...$$) math.
+extra_javascript:
+  - js/mathjax-config.js
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
