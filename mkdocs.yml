@@ -100,7 +100,9 @@ markdown_extensions:
       permalink: true
   - pymdownx.arithmatex:
       generic: true
-      inline_syntax: true
+      inline_syntax:
+        - dollar
+        - round
   - pymdownx.details
   - pymdownx.highlight:
       anchor_linenums: true
