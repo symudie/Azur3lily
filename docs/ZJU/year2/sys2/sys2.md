@@ -160,6 +160,8 @@ Adding extra hardware to retrieve the missing item early from the internal resou
 
 ##### forwarding conditions
 
+EX hazard和MEM hazard
+
 | 信号       | 状态 | 操作数来源          | 说明                                     |
 |------------|------|---------------------|------------------------------------------|
 | ForwardA   | 00   | ID/EX寄存器         | 来自寄存器堆的原始值                     |
@@ -177,30 +179,33 @@ add x1,x1,x3
 add x1,x1,x4
 ```
 
+Use the most recent data.(在前置条件当中加入判断不是EX hazard)
+
 #### Load-Use Hazard
 
 ```
 lw x1, 0(x2)   # MEM阶段末尾才获取x1的值
 add x3, x1, x4 # EX阶段需x1，前推无法及时提供
 ```
-由此我们需要引入stall机制再加上forwarding来实现。
+
+由此我们需要引入stall机制, 再加上forwarding来实现。
 
 ### Pipelining with stall
 
+ - Force control values in ID/EX register 0
+ - Prevent update of PC and IF/ID register
+(可以使用软件重排序来避免冲突导致效率浪费)
 --NOP
 
 ![stall](imgs/lec3-stalldatapath.png)
-
-
-
-
-
 
 ### control hazards
 
 flow of excution depends on previous instruction.
 
-Problem:THe conditional brach instruction
+Problem:THe conditional branch instruction(B/J)
+
+存在forwarding也解决不了的问题（b指令紧邻相关语句的情况）所以我们需要引入stall使之到达可以实现的时候。
 
 #### Branch hazards
 
@@ -208,9 +213,80 @@ Problem:THe conditional brach instruction
 
 beq的结果我们需要等到运行到第三阶段才能得到，于是我们浪费了3 clock cycles。
 
+#### How to reduce stall
 
+- in risc-v pipelining
+  - compare registers and compute target `early` in the pipelining
+  - add hardware to do in ID stage
 
+- key processes in branch instructions
+  - compute the branch target address
+  - judge if the branch success
 
+- determine outcome to ID stage
+  - target address adder
+  - register comparator
 
+![solution1](imgs/lec3-solutionstall.png)
 
+‘赌博’
+
+![solution2](imgs/lec3-solutionprediction.png)
+
+更加高级的版本--预测一部分条件分支不会发生
+
+exp：针对循环底部的条件分支，因为这类分支 “很可能跳转到循环顶部（they are likely to be taken to the top of the loops）”，所以对于更早地址的这类分支，会 “总是预测跳转（always predict taken）”，以此优化流水线执行，减少因控制冒险导致的停顿。
+
+![solution3](imgs/lec3-Delayed%20Decision.png)
+
+#### More About -- Reducing Branch Delay
+
+##### Predict branch taken/untaken
+
+![predictriscv](imgs/lec3-predictriscv.png)
+
+##### Delay Branch（riscv不用了hh）
+
+分支延迟槽(delay slot)通过强制执行分支后的一条指令，让流水线在分支判断期间保持忙碌，减少因控制冒险造成的性能损失。
+
+#### Dynamic Branch Prediction
+
+根据当前指令的跳转历史做判别(猜测之类的)
+ - Branch prediction buffer
+ - Indexed by recent branch instruction address
+ - stores outcome
+ - excute branch
+
+#### Branch History Table(BHT)(FSM)
+
+##### 1-bit Predictor:shortcoming
+
+每错误预测一次就会修改预期状态（外循环和内循环会造成两次的跳转修改）
+
+##### 2-bit
+
+![2bitBHT](imgs/lec3-2bitBHT.png)
+
+巧妙解决了内循环1000次外循环10000次的矛盾（连续两次跳转不正常才修改状态）
+
+- Branch-Target buffer
+ - 速度更快
+ - 提供更多的指令
+- Integrated Instruction Fetch Units（可能需要多个周期来取地址）
+
+# lec5
+
+## Scheduling of NONlinear pipelining
+
+存在回环 存在冲突
+
+![nonlinear](imgs/lec2-nonlinearpipelining.png)
+
+Reservationn table 
+
+![conflictvector](imgs/lec3-conflictvector.png)
+
+作图得到
+
+![conflict](imgs/lec3-conflictexp.png)
 
