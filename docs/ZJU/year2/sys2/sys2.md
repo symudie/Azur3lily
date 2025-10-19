@@ -284,9 +284,12 @@ exp：针对循环底部的条件分支，因为这类分支 “很可能跳转�
 
 Reservationn table 
 
-![conflictvector](imgs/lec3-conflictvector.png)
+![conflictvector](imgs/lec5-conflictvector.png)
 
 作图得到，需要补充的事（1，5，6，8）是根据同一个部件间隔多少周期可能存在冲突决定的，而冲突向量是把对应位置放置为1得到的 （10110001）
 
-![conflict](imgs/lec3-conflictexp.png)
+![conflict](imgs/lec5-conflictexp.png)
+
+多种情况：
+![fsm](imgs/lec5-FSMtransiton.png)
 
