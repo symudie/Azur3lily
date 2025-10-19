@@ -290,6 +290,64 @@ Reservationn table
 
 ![conflict](imgs/lec5-conflictexp.png)
 
-多种情况：
+多种情况，以及预期的时钟周期的长度，拉长了时间的发射间隔：
+
 ![fsm](imgs/lec5-FSMtransiton.png)
 
+## Multiple Issue
+
+### Instruction-Level Parallelism（ILP）并行性
+
+- Deeper pipeline
+- Multiple issue(4-way multiple-issue)
+- dependencies reduce this in practice
+
+### Speculation
+
+- Guess what to do with an instruction.
+- Common to static and dynamic multiple issue.(on branch outcome or load)
+
+1. Compiler Speculation:reorder instructions(move load before branch)
+
+2. Hardware Speculation:look ahead for instructions to excute
+
+### Superscalar
+
+超标量流水线(1-8)：实则就是一次性发送很多条指令，在不冲突的时候同时进行--引入了更多的硬件来实现多条流水线的并行。按顺序的发射，同时冲突的删除在流出的时候被处理好。
+
+Dual-Issue Risc-v
+
+怎么做？
+1. 按顺序的检测发射的包里面是否存在冲突
+2. 检测包和包之间的冲突（data hazard）
+
+发射的时候：1条整型 + 1条浮点型（要求多复用部件）
+
+ALU/Branch 槽
+Load/Store 槽
+
+Hazards的处理
+EX data hazard
+ - forwarding avoided
+```
+LOOP:ld x31,0(x20)
+    add x31,x31,x21
+    sd x31,0(x20)
+    addi x20,x20,-8
+    blt x22,x20,loop
+```
+
+|cycle| ALU/Branch 槽 | Load/Store 槽 |
+| ----|---------|--------------|
+|1| nop| ld x31,0(x20)|
+|2| add x31,x31,x21| nop|
+|3| add x20,x20,-8 | sd x31,0(x20)|
+|4|blt x22,x20,loop|  |
+
+IPC = 5/4 = 1.25
+
+### VLIM(Very Long Instruction Word)
+
+超长指令字：把多条指令捆绑在了一个指令当中，每n分之一发送一条，共n条
+
+![superpipeline](imgs/lec5-superpipeline.png)
