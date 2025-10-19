@@ -286,7 +286,7 @@ Reservationn table
 
 ![conflictvector](imgs/lec3-conflictvector.png)
 
-作图得到
+作图得到，需要补充的事（1，5，6，8）是根据同一个部件间隔多少周期可能存在冲突决定的，而冲突向量是把对应位置放置为1得到的 （10110001）
 
 ![conflict](imgs/lec3-conflictexp.png)
 
