@@ -44,11 +44,13 @@ jobs:
           pip install mkdocs-material
           pip install pymdown-extensions
 
-      - name: Setup Pages
-        uses: actions/configure-pages@v4
+      - name: Verify MkDocs Installation
+        run: |
+          mkdocs --version
+          python -c "import pymdownx; print('pymdownx installed OK')"
 
       - name: Build documentation
-        run: mkdocs build --clean
+        run: mkdocs build --clean -v
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

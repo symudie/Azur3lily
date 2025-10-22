@@ -89,7 +89,7 @@ theme:
     - navigation.footer
   language: zh # 语言
 
-# Markdown 扩展配置（采用用户示例，包含 pymdownx 系列扩展）
+# Markdown 扩展配置（简化版，确保 CI 兼容）
 markdown_extensions:
   - toc:
       permalink: true
@@ -100,14 +100,8 @@ markdown_extensions:
   - md_in_html
   - sane_lists
   - admonition
-  - pymdownx.keys
-  - pymdownx.mark
-  - pymdownx.tilde
-  - pymdownx.critic
   - pymdownx.details
-  - pymdownx.snippets
-  - pymdownx.magiclink
-  - pymdownx.superfences
+  - pymdownx.superfices
   - pymdownx.inlinehilite
   - pymdownx.emoji:
       emoji_index: !!python/name:material.extensions.emoji.twemoji
@@ -139,6 +133,4 @@ extra_javascript:
 extra_css:
   - https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css
   - https://fonts.googleapis.com/css?family=Roboto:500,500i,600,600i&display=fallback
-  - css/custom.css
-  - css/neoteroi-mkdocs.css
   - stylesheets/extra.css
