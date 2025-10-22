@@ -351,3 +351,36 @@ IPC = 5/4 = 1.25
 超长指令字：把多条指令捆绑在了一个指令当中，每n分之一发送一条，共n条
 
 ![superpipeline](imgs/lec5-superpipeline.png)
+
+# lec4 Software-Hardware Interface
+
+## Exceptions and interrupts
+
+Exceptions:unexpected change in flow
+interrupts:from an external I/O controller
+
+### handling exceptions
+
+- save pc of offending instruction(SEPC)
+- save indication of the problem(SCAUSE)
+
+what to do?
+read cause and tansfer to relevant handler
+determine action required
+if restartable
+ - take corrective action
+ - use SEPC to return to program
+otherwive
+ - terminate program
+ - report error using SEPC,SCAUSE
+
+流水线中可能引入乱序完成
+
+
+## Software-Hardware Interface
+
+复习了系统一？讲了下汇编语言和cpu，load program，excute program
+
+## Brief introduction of OS
+
+resource allocator

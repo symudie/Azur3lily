@@ -475,3 +475,22 @@ It is an open problem to determine precisely the expected right path length of b
 #### Comparison
 
 ![analyse](imgs/analyse.png)
+
+# lec5
+
+## Search problem
+
+BFS 和 DFS 结合 -> (Iterative deepening Search)
+
+### A* Search
+
+维护了一个函数 $ f(x) = g(x) + h(x) $
+
+保证了找到最优解当 $ h(x) $ 从不低估真正的开销。
+
+## Search with backtracking
+
+回溯算法
+
+Tic tac toe-Minimax Strategy
+
