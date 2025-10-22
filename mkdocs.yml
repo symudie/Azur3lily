@@ -128,9 +128,6 @@ markdown_extensions:
 
 plugins:
   - search
-  - heti:
-      extra_skipped_class:
-        - arithmatex
 
 # Use KaTeX (official CDN) + auto-render for math rendering
 extra_javascript:
