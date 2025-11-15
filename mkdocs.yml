@@ -7,26 +7,7 @@ edit_uri: edit/main/docs/
 # 主题配置已移动到下方，删除此处重复配置
 
 nav:
-  - 首页: index.md
-  - 浙江大学:
-    - 大一:
-      - 计算机系统I: ZJU/year1/sys1.md
-      - 信息安全原理和数学基础: ZJU/year1/info_sec.md
-      - 数据结构基础与算法分析: ZJU/year1/fds.md
-    - 短学期:
-      - Web: ZJU/shortterm/web.md
-      - Pwn: ZJU/shortterm/Pwn.md
-      - Reverse: ZJU/shortterm/Reverse.md
-      - Misc: ZJU/shortterm/misc.md
-    - 大二:
-      - 计算机系统II: ZJU/year2/sys2/sys2.md
-      - 密码学: ZJU/year2/crypto/crypto.md
-      - 高级数据结构与算法分析: ZJU/year2/ads/ads.md
-  - 技能:
-    - cs61a: skills/cs61a.md
-    - docker: skills/docker.md
-    - git: skills/git.md
-    - mac: skills/mac.md
+    - 摄影内训: 青志/docs.md
 
 theme:
   name: material
