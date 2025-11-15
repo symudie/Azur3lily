@@ -384,3 +384,7 @@ otherwive
 ## Brief introduction of OS
 
 resource allocator
+
+# OS（基于linux）.
+
+

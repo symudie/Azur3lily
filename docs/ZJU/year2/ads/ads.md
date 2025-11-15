@@ -398,6 +398,48 @@ each node.
 
 ### B & B+ trees:
  - Search trees with more branches. Suitable for reducing access 
+
+## 主定理（Master Theorem）简介
+
+主定理用于求解形如
+
+$$
+T(n)=a\,T\left(\frac{n}{b}\right)+f(n)
+$$
+
+的分治递归式，其中常数 $a\ge1$, $b>1$。记
+
+$$p=\log_b a\quad(\text{即 }n^{\log_b a}=n^p).$$
+
+比较 $f(n)$ 与 $n^p$ 的大小，可得到三类常见情形：
+
+1. 若存在常数 $\varepsilon>0$ 使得
+    $$f(n)=O\big(n^{p-\varepsilon}\big),$$
+    则
+    $$T(n)=\Theta\big(n^p\big).$$
+
+2. 若存在常数 $k\ge0$ 使得
+    $$f(n)=\Theta\big(n^p\log^k n\big),$$
+    则
+    $$T(n)=\Theta\big(n^p\log^{k+1} n\big).$$
+
+3. 若存在常数 $\varepsilon>0$ 使得
+    $$f(n)=\Omega\big(n^{p+\varepsilon}\big)$$
+    且满足正则性条件（例如存在 $c<1$ 使得 $a\,f(n/b)\le c\,f(n)$），则
+    $$T(n)=\Theta\big(f(n)\big).$$
+
+### 使用步骤（快速）
+- 识别 $a,b,f(n)$，计算 $p=\log_b a$。
+- 比较 $f(n)$ 与 $n^p$，套用对应情形。
+- 若不满足以上情形，改用递归树或更一般的 Akra–Bazzi 定理。
+
+### 例子
+- 归并排序：$T(n)=2T(n/2)+\Theta(n)$，这里 $p=1$, $f(n)=\Theta(n)=\Theta(n^p)$，按情形2（$k=0$）得 $T(n)=\Theta(n\log n)$。
+- 题中例子：$T(n)=2T(n/2)+\Theta(n\log n)$，$p=1$, $f(n)=\Theta(n\log n)=\Theta(n^p\log^1 n)$，按情形2（$k=1$）得 $T(n)=\Theta(n\log^2 n)$。
+
+---
+
+（以上为简洁版说明，需要我把此节移动到某处或展开递归树图示、练习题吗？）
  - cost on nodes, applications on database, secondary drives…
  - Reduce tree depth by increasing the number of branches.
 
@@ -494,3 +536,46 @@ BFS 和 DFS 结合 -> (Iterative deepening Search)
 
 Tic tac toe-Minimax Strategy
 
+# lec6 
+
+## Divide and Conquer
+
+- 分为小问题
+- 解决每个小问题
+- 返回
+
+### Closest pair of points
+计算几何
+
+Divide: draw vertical line L so that n / 2 points on each side.
+- Conquer: find closest pair in each side recursively.
+- Combine: find closest pair with one point in each side.
+- Return best of 3 solutions.
+
+![solution](imgs/lec6-points.png)
+
+在选择考虑范围的时候，只需要采用左右最小的值。
+
+![proof](imgs/lec6-proofpoints.png)
+
+### Solving recurrent equations
+
+combine 
+
+# lec7
+
+## Dynamic Programming
+
+
+
+### shortest path in DAGs
+
+其实就是状态转移--马尔可夫决策过程
+
+![转移](imgs/lec7-状态转移.png)
+
+### Maximum subsequence sum
+
+![max](imgs/lec7-max.png)
+
+### Optimal binary search trees
