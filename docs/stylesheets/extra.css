@@ -1,52 +1,28 @@
-/* Page layout: content + right column TOC */
-/* Ensure parent main area can host two columns */
-.md-main {
-  display: flex;
-  align-items: flex-start;
+/* Extra stylesheet: hide any page-toc column and keep single-column layout */
+.md-main { display: block; }
+.page-toc, .page-toc-column { display: none !important; }
+
+/* Sidebar collapse/expand styles */
+.md-nav .nav-toggle {
+  display: inline-block;
+  width: 1.1em;
+  text-align: center;
+  cursor: pointer;
+  color: var(--md-default-foreground, #666);
+  margin-right: 0.35rem;
+}
+.md-nav .nav-collapsed > .md-nav__sublist {
+  display: none;
+}
+.md-nav .nav-toggle::before {
+  content: "\25B6"; /* triangle */
+  display: inline-block;
+  transform: rotate(0deg);
+}
+.md-nav .nav-expanded > .md-nav__link .nav-toggle::before,
+.md-nav .nav-expanded > .md-nav__link .nav-toggle {
+  transform: rotate(90deg);
 }
 
-.md-content {
-  flex: 1 1 auto;
-  min-width: 0; /* prevent overflow */
-}
-
-/* Right-side page TOC column */
-.page-toc-column {
-  width: 240px;
-  margin-left: 24px;
-  flex: 0 0 240px;
-}
-
-.page-toc {
-  position: sticky;
-  top: 88px;
-  max-height: calc(100vh - 100px);
-  overflow: auto;
-  padding: 12px;
-  background: var(--md-default-bg, #fff);
-  border: 1px solid rgba(0,0,0,0.06);
-  border-radius: 8px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.04);
-  font-size: 14px;
-}
-
-.page-toc h4 {
-  margin: 0 0 8px 0;
-  font-size: 13px;
-}
-
-.page-toc ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.page-toc li { margin: 6px 0; }
-.page-toc a { color: var(--md-default-foreground, #333); text-decoration: none; }
-.page-toc a:hover { text-decoration: underline; }
-
-/* On narrow screens, revert to single column (hide TOC) */
-@media (max-width: 900px) {
-  .md-main { display: block; }
-  .page-toc-column { display: none; }
-}
+/* make toggle inline with text */
+.md-nav__link .nav-toggle { margin-right: 0.45rem; }
