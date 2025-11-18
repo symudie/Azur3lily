@@ -4,10 +4,13 @@ repo_url: https://github.com/symudie/Azur3lily
 repo_name: symudie/Azur3lily
 edit_uri: edit/main/docs/
 
+# 仅构建 `docs/青志` 目录，网站只显示该目录下的页面
+docs_dir: docs/青志
+
 # 主题配置已移动到下方，删除此处重复配置
 
 nav:
-    - 摄影内训: 青志/docs.md
+  - 摄影内训: docs.md
 
 theme:
   name: material
@@ -103,15 +106,3 @@ markdown_extensions:
 
 plugins:
   - search
-
-# Use KaTeX (official CDN) + auto-render for math rendering
-extra_javascript:
-  - https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js
-  - https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js
-  - js/katex.js
-  - js/sidebar-collapse.js
-
-extra_css:
-  - https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css
-  - https://fonts.googleapis.com/css?family=Roboto:500,500i,600,600i&display=fallback
-  - stylesheets/extra.css
