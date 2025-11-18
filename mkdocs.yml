@@ -14,7 +14,21 @@ markdown_extensions:
   - admonition
   - pymdownx.superfences
   - pymdownx.arithmatex:
-      generic: true
+      site_name: Azur3lily's record
+      docs_dir: docs/青志
 
-plugins:
-  - search
+      theme:
+        name: material
+        language: zh
+
+      markdown_extensions:
+        - toc:
+            permalink: true
+            toc_depth: 4
+        - admonition
+        - pymdownx.superfences
+        - pymdownx.arithmatex:
+            generic: true
+
+      plugins:
+        - search
