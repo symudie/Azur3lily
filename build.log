@@ -1,0 +1,124 @@
+DEBUG   -  Loading configuration file: /Users/azur3v1/Azur3lily/mkdocs.yml
+DEBUG   -  Loaded theme configuration for 'material' from '/Users/azur3v1/Azur3lily/.venv/lib/python3.9/site-packages/material/templates/mkdocs_theme.yml': {'language': 'en', 'direction': None, 'features': [], 'font': {'text': 'Roboto', 'code': 'Roboto Mono'}, 'icon': None, 'favicon': 'assets/images/favicon.png', 'static_templates': ['404.html']}
+DEBUG   -  Config value 'config_file_path' = '/Users/azur3v1/Azur3lily/mkdocs.yml'
+DEBUG   -  Config value 'site_name' = "Azur3lily's record"
+DEBUG   -  Config value 'nav' = [{'摄影内训': 'docs.md'}]
+DEBUG   -  Config value 'pages' = None
+DEBUG   -  Config value 'exclude_docs' = None
+DEBUG   -  Config value 'draft_docs' = None
+DEBUG   -  Config value 'not_in_nav' = None
+DEBUG   -  Config value 'site_url' = None
+DEBUG   -  Config value 'site_description' = None
+DEBUG   -  Config value 'site_author' = None
+DEBUG   -  Config value 'theme' = Theme(name='material', dirs=['/Users/azur3v1/Azur3lily/.venv/lib/python3.9/site-packages/material/templates', '/Users/azur3v1/Azur3lily/.venv/lib/python3.9/site-packages/mkdocs/templates'], static_templates={'404.html', 'sitemap.xml'}, name='material', locale=Locale('en'), language='zh', direction=None, features=[], font={'text': 'Roboto', 'code': 'Roboto Mono'}, icon=None, favicon='assets/images/favicon.png')
+DEBUG   -  Config value 'docs_dir' = '/Users/azur3v1/Azur3lily/docs/青志'
+DEBUG   -  Config value 'site_dir' = '/Users/azur3v1/Azur3lily/site'
+DEBUG   -  Config value 'copyright' = None
+DEBUG   -  Config value 'google_analytics' = None
+DEBUG   -  Config value 'dev_addr' = _IpAddressValue(host='127.0.0.1', port=8000)
+DEBUG   -  Config value 'use_directory_urls' = True
+DEBUG   -  Config value 'repo_url' = None
+DEBUG   -  Config value 'repo_name' = None
+DEBUG   -  Config value 'edit_uri_template' = None
+DEBUG   -  Config value 'edit_uri' = None
+DEBUG   -  Config value 'extra_css' = ['https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css']
+DEBUG   -  Config value 'extra_javascript' = ['https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js', 'https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js', 'js/katex-init.js']
+DEBUG   -  Config value 'extra_templates' = []
+DEBUG   -  Config value 'markdown_extensions' = ['toc', 'tables', 'fenced_code', 'admonition', 'pymdownx.superfences']
+DEBUG   -  Config value 'mdx_configs' = {'toc': {'permalink': True, 'toc_depth': 4}}
+DEBUG   -  Config value 'strict' = False
+DEBUG   -  Config value 'remote_branch' = 'gh-pages'
+DEBUG   -  Config value 'remote_name' = 'origin'
+DEBUG   -  Config value 'extra' = {}
+DEBUG   -  Config value 'plugins' = {'material/search': <material.plugins.search.plugin.SearchPlugin object at 0x106b9fee0>}
+DEBUG   -  Config value 'hooks' = {}
+DEBUG   -  Config value 'watch' = []
+DEBUG   -  Config value 'validation' = {'nav': {'omitted_files': 20, 'not_found': 30, 'absolute_links': 20}, 'links': {'not_found': 30, 'absolute_links': 20, 'unrecognized_links': 20, 'anchors': 20}}
+DEBUG   -  Running `startup` event from plugin 'material/search'
+DEBUG   -  Running `config` event from plugin 'material/search'
+DEBUG   -  Looking for translations for locale 'en'
+DEBUG   -  No translations found here: '/Users/azur3v1/Azur3lily/.venv/lib/python3.9/site-packages/mkdocs/templates/locales'
+DEBUG   -  No translations found here: '/Users/azur3v1/Azur3lily/.venv/lib/python3.9/site-packages/material/templates/locales'
+DEBUG   -  Looking for translations for locale 'en'
+DEBUG   -  No translations found here: '/Users/azur3v1/Azur3lily/.venv/lib/python3.9/site-packages/mkdocs/templates/locales'
+DEBUG   -  No translations found here: '/Users/azur3v1/Azur3lily/.venv/lib/python3.9/site-packages/material/templates/locales'
+DEBUG   -  Looking for translations for locale 'en'
+DEBUG   -  No translations found here: '/Users/azur3v1/Azur3lily/.venv/lib/python3.9/site-packages/mkdocs/templates/locales'
+DEBUG   -  No translations found here: '/Users/azur3v1/Azur3lily/.venv/lib/python3.9/site-packages/material/templates/locales'
+INFO    -  Cleaning site directory
+INFO    -  Building documentation to directory: /Users/azur3v1/Azur3lily/site
+DEBUG   -  Looking for translations for locale 'en'
+DEBUG   -  No translations found here: '/Users/azur3v1/Azur3lily/.venv/lib/python3.9/site-packages/mkdocs/templates/locales'
+DEBUG   -  No translations found here: '/Users/azur3v1/Azur3lily/.venv/lib/python3.9/site-packages/material/templates/locales'
+DEBUG   -  Reading markdown pages.
+DEBUG   -  Reading: docs.md
+DEBUG   -  Copying static assets.
+DEBUG   -  Copying media file: 'photos/cmos.png'
+DEBUG   -  Copying media file: 'photos/exp1.png'
+DEBUG   -  Copying media file: 'photos/exp2.jpg'
+DEBUG   -  Copying media file: 'photos/exp3.jpg'
+DEBUG   -  Copying media file: 'photos/flower.png'
+DEBUG   -  Copying media file: 'photos/pic1.jpg'
+DEBUG   -  Copying media file: 'photos/pic2.jpg'
+DEBUG   -  Copying media file: 'photos/pic3.jpg'
+DEBUG   -  Copying media file: 'photos/pic4.jpg'
+DEBUG   -  Copying media file: 'photos/pic5.jpg'
+DEBUG   -  Copying media file: 'photos/pic6.jpg'
+DEBUG   -  Copying media file: 'photos/video.mp4'
+DEBUG   -  Copying media file: 'photos/光绘.jpg'
+DEBUG   -  Copying media file: 'photos/构图.png'
+DEBUG   -  Copying media file: 'photos/正面.png'
+DEBUG   -  Copying media file: 'photos/焦段.png'
+DEBUG   -  Copying media file: 'photos/背面.png'
+DEBUG   -  Copying media file: 'photos/顶部.png'
+DEBUG   -  Copying media file: 'assets/images/favicon.png'
+DEBUG   -  Copying media file: 'assets/javascripts/bundle.e71a0d61.min.js'
+DEBUG   -  Copying media file: 'assets/javascripts/bundle.e71a0d61.min.js.map'
+DEBUG   -  Copying media file: 'assets/javascripts/lunr/min/lunr.ar.min.js'
+DEBUG   -  Copying media file: 'assets/javascripts/lunr/min/lunr.da.min.js'
+DEBUG   -  Copying media file: 'assets/javascripts/lunr/min/lunr.de.min.js'
+DEBUG   -  Copying media file: 'assets/javascripts/lunr/min/lunr.du.min.js'
+DEBUG   -  Copying media file: 'assets/javascripts/lunr/min/lunr.el.min.js'
+DEBUG   -  Copying media file: 'assets/javascripts/lunr/min/lunr.es.min.js'
+DEBUG   -  Copying media file: 'assets/javascripts/lunr/min/lunr.fi.min.js'
+DEBUG   -  Copying media file: 'assets/javascripts/lunr/min/lunr.fr.min.js'
+DEBUG   -  Copying media file: 'assets/javascripts/lunr/min/lunr.he.min.js'
+DEBUG   -  Copying media file: 'assets/javascripts/lunr/min/lunr.hi.min.js'
+DEBUG   -  Copying media file: 'assets/javascripts/lunr/min/lunr.hu.min.js'
+DEBUG   -  Copying media file: 'assets/javascripts/lunr/min/lunr.hy.min.js'
+DEBUG   -  Copying media file: 'assets/javascripts/lunr/min/lunr.it.min.js'
+DEBUG   -  Copying media file: 'assets/javascripts/lunr/min/lunr.ja.min.js'
+DEBUG   -  Copying media file: 'assets/javascripts/lunr/min/lunr.jp.min.js'
+DEBUG   -  Copying media file: 'assets/javascripts/lunr/min/lunr.kn.min.js'
+DEBUG   -  Copying media file: 'assets/javascripts/lunr/min/lunr.ko.min.js'
+DEBUG   -  Copying media file: 'assets/javascripts/lunr/min/lunr.multi.min.js'
+DEBUG   -  Copying media file: 'assets/javascripts/lunr/min/lunr.nl.min.js'
+DEBUG   -  Copying media file: 'assets/javascripts/lunr/min/lunr.no.min.js'
+DEBUG   -  Copying media file: 'assets/javascripts/lunr/min/lunr.pt.min.js'
+DEBUG   -  Copying media file: 'assets/javascripts/lunr/min/lunr.ro.min.js'
+DEBUG   -  Copying media file: 'assets/javascripts/lunr/min/lunr.ru.min.js'
+DEBUG   -  Copying media file: 'assets/javascripts/lunr/min/lunr.sa.min.js'
+DEBUG   -  Copying media file: 'assets/javascripts/lunr/min/lunr.stemmer.support.min.js'
+DEBUG   -  Copying media file: 'assets/javascripts/lunr/min/lunr.sv.min.js'
+DEBUG   -  Copying media file: 'assets/javascripts/lunr/min/lunr.ta.min.js'
+DEBUG   -  Copying media file: 'assets/javascripts/lunr/min/lunr.te.min.js'
+DEBUG   -  Copying media file: 'assets/javascripts/lunr/min/lunr.th.min.js'
+DEBUG   -  Copying media file: 'assets/javascripts/lunr/min/lunr.tr.min.js'
+DEBUG   -  Copying media file: 'assets/javascripts/lunr/min/lunr.vi.min.js'
+DEBUG   -  Copying media file: 'assets/javascripts/lunr/min/lunr.zh.min.js'
+DEBUG   -  Copying media file: 'assets/javascripts/lunr/tinyseg.js'
+DEBUG   -  Copying media file: 'assets/javascripts/lunr/wordcut.js'
+DEBUG   -  Copying media file: 'assets/javascripts/workers/search.7a47a382.min.js'
+DEBUG   -  Copying media file: 'assets/javascripts/workers/search.7a47a382.min.js.map'
+DEBUG   -  Copying media file: 'assets/stylesheets/main.618322db.min.css'
+DEBUG   -  Copying media file: 'assets/stylesheets/main.618322db.min.css.map'
+DEBUG   -  Copying media file: 'assets/stylesheets/palette.ab4e12ef.min.css'
+DEBUG   -  Copying media file: 'assets/stylesheets/palette.ab4e12ef.min.css.map'
+DEBUG   -  Building theme template: 404.html
+DEBUG   -  Building theme template: sitemap.xml
+DEBUG   -  Gzipping template: sitemap.xml
+DEBUG   -  Building markdown pages.
+DEBUG   -  Building page docs.md
+DEBUG   -  Running `page_context` event from plugin 'material/search'
+DEBUG   -  Running `post_build` event from plugin 'material/search'
+INFO    -  Documentation built in 0.20 seconds
