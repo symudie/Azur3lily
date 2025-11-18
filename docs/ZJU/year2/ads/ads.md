@@ -579,3 +579,9 @@ combine
 ![max](imgs/lec7-max.png)
 
 ### Optimal binary search trees
+
+# lec9
+
+## Intractability
+
+### Computability
