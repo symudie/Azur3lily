@@ -1,27 +1,7 @@
 site_name: Azur3lily
 
 nav:
-  - 首页: index.md
-  - 青志摄影: 1111/docs.md
-  - ZJU:
-      - 一年级:
-          - 数据结构基础: ZJU/year1/fds.md
-          - 信息安全原理与数学基础: ZJU/year1/info_sec.md
-          - 计算机系统I: ZJU/year1/sys1.md
-      - 二年级:
-          - 算法与数据结构: ZJU/year2/ads/ads.md
-          - 密码学: ZJU/year2/crypto/crypto.md
-          - 计算机系统II: ZJU/year2/sys2/sys2.md
-      - 短学期:
-          - Pwn: ZJU/shortterm/Pwn.md
-          - Reverse: ZJU/shortterm/Reverse.md
-          - 杂项: ZJU/shortterm/misc.md
-          - Web: ZJU/shortterm/web.md
-  - 技能:
-      - CS61A: skills/cs61a.md
-      - Docker: skills/docker.md
-      - Git: skills/git.md
-      - Mac: skills/mac.md
+  - 青志摄影: photography/docs.md
 
 theme:
   name: material
