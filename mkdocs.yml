@@ -1,4 +1,5 @@
 site_name: Azur3lily
+
 nav:
   - 首页: index.md
   - 青志摄影: 1111/docs.md
@@ -21,7 +22,7 @@ nav:
       - Docker: skills/docker.md
       - Git: skills/git.md
       - Mac: skills/mac.md
-      
+
 theme:
   name: material
   icon:
@@ -45,4 +46,8 @@ theme:
       toggle:
         icon: material/brightness-4
         name: Switch to light mode
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
 
