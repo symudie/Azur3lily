@@ -580,6 +580,23 @@ combine
 
 ### Optimal binary search trees
 
+# lec8 期中 + 贪心算法
+
+## Active Selection
+
+贪心算法应该怎么选？
+
+[Earliest finish time] Consider jobs in ascending order of fj.
+
+（pro4要证明贪心是对的）
+
+Proposition. Can implement earliest-finish-time first in O(n log n) time.
+・Keep track of job j* that was added last to S.
+・Job j is compatible with S iff s j ≥ fj* .
+・Sorting by finish times takes O(n log n) time.
+
+反证？
+
 # lec9
 
 ## Intractability
