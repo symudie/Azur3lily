@@ -929,8 +929,19 @@ else return Merge1( H2, H1 );
 ・Sorting by finish times takes O(n log n) time.</p>
 <p>反证？</p>
 <h1 id="lec9">lec9</h1>
-<h2 id="intractability">Intractability</h2>
+<h2 id="intractability">Intractability（计算复杂度）</h2>
 <h3 id="computability">Computability</h3>
+<p>Church-Turing Thesis:Any computable functions can be computed by TMs
+ (so can Lambda-calculus).</p>
+<h2 id="pnpco-np">P，NP，co-NP</h2>
+<h3 id="decision-vs-optimization-problem">decision vs Optimization problem</h3>
+<p>Fact: For each optimization problem X, there is a decision version X 0 of the problem. If we have a polynomial time algorithm for the
+decision version X 0 , we can solve the original problem X in
+polynomial time.</p>
+<p>NP 不能在多项式时间内计算，但是可以在多项式时间内验证</p>
+<p><img alt="np" src="../imgs/lec9-NP.png" /></p>
+<h2 id="np-completeness">NP-completeness</h2>
+<h3 id="poly-time-reduction">Poly-Time Reduction</h3>
 
 
 
