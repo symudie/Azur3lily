@@ -1,0 +1,707 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>信息安全原理与数学基础 - Azur3lily</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.618322db.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Azur3lily" class="md-header__button md-logo" aria-label="Azur3lily" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Azur3lily
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              信息安全原理与数学基础
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Azur3lily" class="md-nav__button md-logo" aria-label="Azur3lily" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Azur3lily
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    首页
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../photography/docs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    青志摄影
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        历年试题分析（概率论部分）
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="历年试题分析（概率论部分）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        典型填空题
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        典型大题
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="典型大题">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 大数定律应用
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 随机变量均值与方差
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 联合分布分析
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. 联合分布分析">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        题目4：分段概率密度函数
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        题目5：二元连续型随机变量
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📚 学习建议
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="_1">信息安全原理与数学基础</h1>
+<div class="admonition info">
+<p class="admonition-title">课程概述</p>
+<p>本课程主要涵盖两大模块：<strong>离散数学</strong> 和 <strong>概率论</strong>。
+- 离散数学理论性强，需理解概念
+- 概率论实用性强，真题重复率高，建议多练历年题</p>
+</div>
+<hr />
+<h2 id="_2">历年试题分析（概率论部分）</h2>
+<h3 id="_3">典型填空题</h3>
+<table>
+<thead>
+<tr>
+<th>题号</th>
+<th>题目描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>概率模型判断</td>
+</tr>
+<tr>
+<td>2</td>
+<td>条件概率与独立事件：有雾概率0.4，有雾戴口罩0.2，无雾戴口罩0.01</td>
+</tr>
+</tbody>
+</table>
+<p><strong>第2题解答：</strong></p>
+<p><strong>(1) 戴口罩概率：</strong>
+$$P(\text{戴}) = 0.2 \times 0.4 + 0.01 \times 0.6 = 0.086$$</p>
+<p><strong>(2) 至少一人戴口罩概率：</strong>
+$$P(\text{至少一人}) = 1 - (1-0.086)^3 \approx 0.235$$</p>
+<h3 id="_4">典型大题</h3>
+<h4 id="1">1. 大数定律应用</h4>
+<p>随机01串，长度$10^6$，估计至少有502,000个1的概率。
+思路：中心极限定理，期望$\mu=5\times10^5$，方差$\sigma^2=2.5\times10^5$。</p>
+<h4 id="2">2. 随机变量均值与方差</h4>
+<p>设$W=\frac{X_1+X_2+X_3+X_4}{4}$，$E(X_i)=5$，$\text{Var}(X_i)=20$</p>
+<p><strong>(1) 均值与方差：</strong>
+$$E(W)=5$$
+$$\text{Var}(W)=5$$</p>
+<p><strong>(2)(3) $P[W\geq20]$：</strong>
+方法1：正态分布；方法2：切比雪夫不等式</p>
+<h4 id="3">3. 联合分布分析</h4>
+<table>
+<thead>
+<tr>
+<th>Y\X</th>
+<th>0</th>
+<th>1</th>
+<th>2</th>
+<th>总和</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>0.20</td>
+<td>0.10</td>
+<td>0.15</td>
+<td>0.45</td>
+</tr>
+<tr>
+<td>1</td>
+<td>0.30</td>
+<td>0.05</td>
+<td>0.20</td>
+<td>0.55</td>
+</tr>
+<tr>
+<td>总和</td>
+<td>0.50</td>
+<td>0.15</td>
+<td>0.35</td>
+<td>1.00</td>
+</tr>
+</tbody>
+</table>
+<p><strong>(1) 边际分布：</strong>
+- $P(X=0)=0.50$，$P(X=1)=0.15$，$P(X=2)=0.35$
+- $P(Y=0)=0.45$，$P(Y=1)=0.55$</p>
+<p><strong>(2) 独立性检验：</strong> $P(X=0,Y=0)=0.20\neq0.225$，不独立</p>
+<p><strong>(3) 协方差：</strong>
+$$E[X]=0.85,\ E[Y]=0.55,\ E[XY]=0.45$$
+$$\text{Cov}(X,Y)=0.45-0.85\times0.55=-0.0175$$</p>
+<p><strong>(4) 相关系数：</strong>
+$$\text{Var}(X)=0.8275,\ \text{Var}(Y)=0.2475$$
+$$\rho_{X,Y}=\frac{-0.0175}{\sqrt{0.8275\times0.2475}}\approx-0.039$$</p>
+<hr />
+<h5 id="4">题目4：分段概率密度函数</h5>
+<p><strong>题目：</strong> 分段概率密度函数</p>
+<p>$$f(x) = \begin{cases} 
+k(1-x) &amp; , 0 &lt; x &lt; 1 \
+\frac{1}{2}x &amp; , 1 \leq x \leq 2 \
+0 &amp; , \text{其他}
+\end{cases}$$</p>
+<p>=== "问题(1)"
+    <strong>求参数 k：</strong></p>
+<pre><code>利用概率密度函数的性质：$\int_{-\infty}^{\infty} f(x)dx = 1$
+
+$$\int_0^1 k(1-x)dx + \int_1^2 \frac{1}{2}x dx = 1$$
+
+$$k\left[x - \frac{x^2}{2}\right]_0^1 + \frac{1}{2}\left[\frac{x^2}{2}\right]_1^2 = 1$$
+
+$$k\left(1 - \frac{1}{2}\right) + \frac{1}{2}\left(\frac{4}{2} - \frac{1}{2}\right) = 1$$
+
+$$\frac{k}{2} + \frac{3}{4} = 1$$
+
+$$k = \frac{1}{2}$$
+</code></pre>
+<p>=== "问题(2)"
+    <strong>求分布函数 F(x)：</strong></p>
+<pre><code>$$F(x) = \begin{cases}
+0 &amp; , x \leq 0 \\
+\int_0^x \frac{1}{2}(1-t)dt = \frac{1}{4}(2x - x^2) &amp; , 0 &lt; x &lt; 1 \\
+\frac{1}{4} + \int_1^x \frac{1}{2}t dt = \frac{1}{4} + \frac{1}{4}(x^2 - 1) = \frac{x^2}{4} &amp; , 1 \leq x \leq 2 \\
+1 &amp; , x &gt; 2
+\end{cases}$$
+</code></pre>
+<p>=== "问题(3)"
+    <strong>求 P[X ≥ 1.5]：</strong></p>
+<pre><code>$$P[X \geq 1.5] = 1 - F(1.5) = 1 - \frac{(1.5)^2}{4} = 1 - \frac{2.25}{4} = \frac{7}{16}$$
+</code></pre>
+<h5 id="5">题目5：二元连续型随机变量</h5>
+<p><strong>题目：</strong> </p>
+<p>$$f(X,Y) = \begin{cases} 
+\frac{5}{4}x &amp; , y^2 &lt; x &lt; 1 \
+0 &amp; , \text{其他}
+\end{cases}$$</p>
+<p><strong>定义域分析：</strong></p>
+<div class="admonition tip">
+<p class="admonition-title">积分区域</p>
+<ul>
+<li>$x$ 的范围：$(0, 1)$</li>
+<li>对于给定的 $x$，$y$ 的范围：$(-\sqrt{x}, \sqrt{x})$</li>
+<li>约束条件：$y^2 &lt; x$ 且 $0 &lt; x &lt; 1$</li>
+</ul>
+</div>
+<p>=== "问题(1)"
+    <strong>求 P[Y ≤ X]：</strong></p>
+<pre><code>积分区域：$y \leq x$ 且 $y^2 &lt; x &lt; 1$
+
+对于每个 $x \in (0,1)$，$y \in (-\sqrt{x}, \min(x, \sqrt{x}))$
+
+由于 $x \in (0,1)$ 时，$\sqrt{x} &gt; x$，所以 $y \in (-\sqrt{x}, x)$
+
+$$P[Y \leq X] = \int_0^1 \int_{-\sqrt{x}}^x \frac{5}{4}x \, dy \, dx$$
+
+$$= \int_0^1 \frac{5}{4}x(x + \sqrt{x}) \, dx$$
+
+$$= \frac{5}{4} \int_0^1 (x^2 + x^{3/2}) \, dx$$
+
+$$= \frac{5}{4} \left[\frac{x^3}{3} + \frac{2x^{5/2}}{5}\right]_0^1$$
+
+$$= \frac{5}{4} \left(\frac{1}{3} + \frac{2}{5}\right) = \frac{5}{4} \times \frac{11}{15} = \frac{11}{12}$$
+</code></pre>
+<p>=== "问题(2)"
+    <strong>求边缘概率密度 f_Y(y)：</strong></p>
+<pre><code>对于 $|y| &lt; 1$，$x$ 的范围是 $(y^2, 1)$：
+
+$$f_Y(y) = \int_{y^2}^1 \frac{5}{4}x \, dx = \frac{5}{4} \cdot \frac{1}{2}(1 - y^4) = \frac{5}{8}(1 - y^4)$$
+
+$$f_Y(y) = \begin{cases}
+\frac{5}{8}(1 - y^4) &amp; , -1 &lt; y &lt; 1 \\
+0 &amp; , \text{其他}
+\end{cases}$$
+</code></pre>
+<p>=== "问题(3)"
+    <strong>联合概率密度函数：</strong></p>
+<pre><code>题目已经给出了联合概率密度函数 $f(X,Y)$，这就是答案：
+
+$$f(X,Y) = \begin{cases} 
+\frac{5}{4}x &amp; , y^2 &lt; x &lt; 1 \\
+0 &amp; , \text{其他}
+\end{cases}$$
+</code></pre>
+<hr />
+<h2 id="_5">📚 学习建议</h2>
+<div class="admonition success">
+<p class="admonition-title">复习要点</p>
+<ol>
+<li><strong>概率论重点：</strong></li>
+<li>条件概率与贝叶斯定理</li>
+<li>随机变量的数字特征（期望、方差、协方差）</li>
+<li>中心极限定理的应用</li>
+<li>
+<p>二元随机变量的联合分布</p>
+</li>
+<li>
+<p><strong>解题技巧：</strong></p>
+</li>
+<li>画图分析积分区域</li>
+<li>熟记常用概率分布的性质</li>
+<li>
+<p>掌握标准化方法</p>
+</li>
+<li>
+<p><strong>历年题特点：</strong></p>
+</li>
+<li>计算题占主要分值</li>
+<li>重视基本概念的应用</li>
+<li>题型相对固定，练习历年题很有效</li>
+</ol>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["content.action.edit", "navigation.tracking", "navigation.expand", "navigation.top", "navigation.footer"], "search": "../../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+    
+  </body>
+</html>

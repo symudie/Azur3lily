@@ -1,0 +1,998 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>高级数据结构（ADS） dyx - Azur3lily</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.618322db.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#ads-dyx" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../.." title="Azur3lily" class="md-header__button md-logo" aria-label="Azur3lily" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Azur3lily
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              高级数据结构（ADS） dyx
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="Azur3lily" class="md-nav__button md-logo" aria-label="Azur3lily" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Azur3lily
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    首页
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../photography/docs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    青志摄影
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#lec1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        lec1
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        平衡搜索树
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="平衡搜索树">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#binary-search-tree-bst" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Binary Search Tree (BST)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#balanced-bsts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Balanced BSTs
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#avl-adelson-velskii-landis-trees" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AVL 树（Adelson-Velskii-Landis Trees）
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="AVL 树（Adelson-Velskii-Landis Trees）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rr" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        RR 旋转
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ll" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LL 旋转
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lr" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LR 旋转
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rl" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        RL 旋转
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#splay-trees" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Splay Trees
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="ads-dyx">高级数据结构（ADS）  dyx</h1>
+<h2 id="lec1">lec1</h2>
+<h2 id="_1">平衡搜索树</h2>
+<h3 id="binary-search-tree-bst">Binary Search Tree (BST)</h3>
+<p>树的操作与树的深度密切相关，最坏情况下深度为 n-1。</p>
+<h3 id="balanced-bsts">Balanced BSTs</h3>
+<ul>
+<li>加速查找</li>
+<li>避免最坏 O(N) 复杂度</li>
+</ul>
+<h2 id="avl-adelson-velskii-landis-trees">AVL 树（Adelson-Velskii-Landis Trees）</h2>
+<p><strong>高度平衡定义</strong>：
+1. 左右子树均为高度平衡树
+2. 左右子树高度差 ≤ 1</p>
+<p><strong>AVL 树定义</strong>：平衡因子 BF(node) = h_left - h_right，AVL 树要求任意节点 BF ∈ {-1, 0, 1}。</p>
+<p><strong>示例</strong>：维护树的平衡，当某节点 BF 不满足时，进行一次旋转（single rotation）使其重新平衡。</p>
+<h4 id="rr">RR 旋转</h4>
+<p><img alt="RR旋转示例" src="../imgs/avl_rr.png" /></p>
+<h4 id="ll">LL 旋转</h4>
+<p><img alt="LL旋转示例" src="../imgs/avl_ll.png" /></p>
+<h4 id="lr">LR 旋转</h4>
+<p><img alt="LR旋转示例" src="../imgs/avl_lr.png" /></p>
+<h4 id="rl">RL 旋转</h4>
+<p><img alt="RL旋转示例" src="../imgs/avl_rl.png" /></p>
+<p>关于 AVL 树的最坏情况。</p>
+<p>just like Fibonacci numbers: N (h) = N (h-1) + N (h-2) + 1
+也就是斐波那契数减去一。</p>
+<p>由斐波那契数性质可得：</p>
+<p>[
+    n_h = F_{h+3} - 1, \quad h \geq 0
+]</p>
+<p>斐波那契数理论给出：</p>
+<p>[
+    F_i \approx \frac{1}{\sqrt{5}} \left( \frac{1+\sqrt{5}}{2} \right)^i
+]</p>
+<p>因此：</p>
+<p>[
+    n_h \approx \frac{1}{\sqrt{5}} \left( \frac{1+\sqrt{5}}{2} \right)^{h+3} - 1
+]</p>
+<p>[
+    \Rightarrow \quad h = O(\ln n)
+]</p>
+<p>挺好的对数级复杂度 不赖/</p>
+<h2 id="splay-trees">Splay Trees</h2>
+<p>amortized time is O(log N)
+Idea: After a node is accessed ,it is pushed to the root by a series of AVL tree rotations.</p>
+<p>the tendency goes to balance.</p>
+<h1 id="lec2">lec2</h1>
+<h2 id="amortized-analysis">Amortized analysis 摊还分析</h2>
+<p>Target: Any M consecutive operationss take at most O(M logN) time.</p>
+<p>exp：
+i. two_stack O(1)
+ii. Dynamic Arrays O(1)</p>
+<h3 id="accounting-method">Accounting Method</h3>
+<h3 id="potential-method">Potential Method</h3>
+<p>How to assign?</p>
+<p>how "messy" the data structure is.(large-messy small-clean) 回味回味</p>
+<p>'amortized-cost = real-cost + k * \Delta phi(keep it larger than zero)'</p>
+<p>\Delta phi = phi after - phi before</p>
+<p>exp:
+i. phi = height of in stack
+代入得到 amortized-cost = O(1) + k·1
+全部移动过去的计算：=O(h) + k·-h //h= height of Instack    =O(1) #下降了
+之后的pop只剩下 real-cost = O(1)</p>
+<p>Why this works:
+E amortized = E real-cost + k(phi end - phi start)</p>
+<p>Then lts go to the proof of the splay tree</p>
+<h1 id="lec3">lec3</h1>
+<h2 id="red-black-trees">Red-Black trees</h2>
+<h3 id="introduction">introduction</h3>
+<p>M-ary Search Trees：search insert delete</p>
+<p>Then Reduce 2-3-4 trees to BSTs:transform 3- and 4- nodes into 2- nodes(用二叉搜索树来模拟多叉搜索树)</p>
+<p><code>Red-black trees</code>
+1. every node is either black or red
+2. root is black
+3. every leaf is black[通常指的是NULL的空节点]
+4. if node is red then both children are black[红色的父与子都是黑色]
+5. all simple paths from the node to descendant leaves contain the same number of black nodes.</p>
+<p>[lemma]: with N internal nodes has height at most 2ln(N+1)</p>
+<p>avl tree is more stricter and more efficient</p>
+<p>proof: bh(tree) &gt;= h(tree)/2</p>
+<h3 id="insertion-and-deletion">insertion and deletion(想一下都觉得难，，)</h3>
+<p>看起来很大，但是转起来很省力，主要在于修改红黑,其实比avl简单听不懂（）</p>
+<h4 id="insert">insert</h4>
+<p><img alt="BST结构示例" src="../imgs/bs_tree.png" /></p>
+<ol>
+<li>
+<p>插入非根默认染红，若是根，则染成黑色</p>
+</li>
+<li>
+<p>若叔叔颜色是红色的，则进行儿-父染色互换，把爷作为新节点</p>
+</li>
+<li>
+<p>判断红色是否连接，根据siblings的颜色，若黑色则</p>
+<ul>
+<li>LL：右单旋，父-爷染色</li>
+<li>RR：左单旋，父-爷染色（取反就可以了）</li>
+<li>LR：先左旋后右旋，儿-爷染色</li>
+<li>RL：先右旋后左旋，儿-爷染色
+（感觉是个递归，直到每一次插入都到达根）</li>
+</ul>
+</li>
+</ol>
+<h4 id="delet">delet（难）</h4>
+<p>deletion和bst的deletion差不多，color fixing process</p>
+<p><img alt="AVL树性质示例" src="../imgs/avl_property.png" /></p>
+<ol>
+<li>
+<p>没有孩子--直接删除</p>
+</li>
+<li>
+<p>只有左孩子\右孩子--代替后变黑</p>
+</li>
+<li>
+<p>没有孩子</p>
+<ul>
+<li>红节点：直接删除</li>
+<li>黑节点：破坏了黑路同<ul>
+<li>兄弟是黑色：<ul>
+<li>至少一个红孩子：（LL（r变s，s变p，p变r），RR，LR（r变p，p变黑），RL）变色 + 旋转</li>
+<li>孩子都是黑的：兄弟变红，双黑上移，进入递归继续判断。是红节点，根则为单黑。</li>
+</ul>
+</li>
+<li>兄弟是红色：兄-父变色，父朝双黑旋转。之后继续进行调整。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h4 id="o">考试原则上不会出红黑树o，，</h4>
+<p>some options of 2-3-4 trees:similar to the bst
+(感觉一下就行 考试不考hhhh)</p>
+<h2 id="b-b-trees">B &amp; B+ trees</h2>
+<h3 id="b-b-tree">B 树（B-Tree）简介（这个不考）</h3>
+<p>B 树是一种自平衡的多路搜索树，广泛应用于数据库和文件系统中。其主要特点如下：</p>
+<ul>
+<li><strong>每个节点可以有多个子节点</strong>，而不是二叉树的两个。（通常是叉数-1）</li>
+<li><strong>所有叶子节点都在同一层</strong>，保证了树的平衡性。</li>
+<li><strong>节点包含多个关键字</strong>，并按照关键字有序存储。</li>
+<li><strong>每个非叶子节点有 k 个子节点，包含 k-1 个关键字</strong>，满足区间分割性质。</li>
+<li><strong>插入和删除操作会自动保持树的平衡</strong>，通过节点的分裂和合并实现。</li>
+</ul>
+<p>B 树的优点在于减少了磁盘 I/O 操作次数，适合存储大量数据的场景。常见的 B 树阶数为 3 或 4（即 2-3 树、2-3-4 树），实际应用中阶数通常更大。</p>
+<h3 id="b">B+ 树（考这个）</h3>
+<p>internal nodes only contain indexs to help find the right leaf.This way can lead to larger 叉数。</p>
+<p><img alt="2-3tree" src="../imgs/2-3tree.png" /></p>
+<p><img alt="2-3-4tree" src="../imgs/2-3-4tree.png" /></p>
+<h4 id="definition">Definition：</h4>
+<pre><code>1. the root is either a leaf or has between 2 and M children
+2. all nonleaf nodes have between M/2 and M nodes
+3. all leaves have the same depth.
+</code></pre>
+<h4 id="insertion">Insertion</h4>
+<ol>
+<li><strong>Locate the Leaf Node</strong>: Start from the root and use internal node indexes to find the target leaf node.</li>
+<li><strong>Insert and Split</strong>:<ul>
+<li>If the leaf node is not full (&lt; M keys), insert the new key in order.</li>
+<li>If the leaf node is full (= M keys):<ul>
+<li>Select the middle key (the ⌈(M+1)/2⌉-th key) as the "split key" and divide the leaf into two nodes.</li>
+<li>Promote the split key to the parent node, which now points to the two new child nodes.</li>
+<li>If the parent is also full, recursively split upwards; if the root splits, the tree height increases by one.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Complexity</strong>: Each insertion requires one downward search and at most one upward split, resulting in O(log N) time overall.</li>
+</ol>
+<h4 id="deletion">Deletion</h4>
+<ol>
+<li><strong>Locate and Delete</strong>: Start from the root, find the leaf node containing the target key, and remove it (maintaining key order).</li>
+<li><strong>Check Leaf Node Size</strong>:<ul>
+<li>If the leaf node still has at least ⌈M/2⌉ keys, deletion is complete.</li>
+<li>If the leaf node has fewer than ⌈M/2⌉ keys:</li>
+<li><strong>Borrow from Sibling</strong>: Try to borrow a key from an adjacent sibling (update the parent’s index key to maintain correct intervals).</li>
+<li><strong>Merge with Sibling</strong>: If siblings also have only ⌈M/2⌉ keys, merge the current node with a sibling and remove the corresponding index key from the parent.</li>
+<li><strong>Recursive Repair</strong>: If the parent now has too few keys (&lt; ⌈M/2⌉), recursively repair up the tree. If the root becomes empty, remove it and decrease the tree height.</li>
+</ul>
+</li>
+<li><strong>Exam Note</strong>: For assignments and exams, 2-3 trees and 2-3-4 trees are treated as B+ trees. By default, the allowed number of keys in leaf nodes equals the allowed number of children in internal nodes.</li>
+</ol>
+<h3 id="hw2c">代码实现（基于hw2.c）</h3>
+<p>数据结构的设置
+<div class="highlight"><pre><span></span><code><span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">node</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="mi">3</span><span class="p">];</span><span class="c1">//用于存储数据 分裂的时候需要4个</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">count</span><span class="p">;</span><span class="c1">//数量</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">isLeaf</span><span class="p">;</span><span class="c1">//判断是否是叶子</span>
+<span class="w">    </span><span class="k">struct</span><span class="w"> </span><span class="nc">node</span><span class="w"> </span><span class="o">*</span><span class="n">children</span><span class="p">[</span><span class="mi">4</span><span class="p">];</span><span class="c1">//孩子指针</span>
+<span class="p">}</span><span class="w"> </span><span class="n">node</span><span class="p">;</span>
+</code></pre></div></p>
+<p>插入
+<div class="highlight"><pre><span></span><code><span class="c1">//insert函数</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">insert</span><span class="p">(</span><span class="n">node</span><span class="w"> </span><span class="o">**</span><span class="n">root</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">k</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">//根</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="n">root</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">NULL</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="o">*</span><span class="n">root</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">new_node</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<span class="w">        </span><span class="p">(</span><span class="o">*</span><span class="n">root</span><span class="p">)</span><span class="o">-&gt;</span><span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">k</span><span class="p">;</span>
+<span class="w">        </span><span class="p">(</span><span class="o">*</span><span class="n">root</span><span class="p">)</span><span class="o">-&gt;</span><span class="n">count</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="w">        </span><span class="k">return</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="c1">//提供参数以供插入</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">repeat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">up</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">    </span><span class="n">node</span><span class="w"> </span><span class="o">*</span><span class="n">newRight</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">NULL</span><span class="p">;</span>
+
+<span class="w">    </span><span class="c1">//进行插入</span>
+<span class="w">    </span><span class="n">insert_rec</span><span class="p">(</span><span class="o">*</span><span class="n">root</span><span class="p">,</span><span class="w"> </span><span class="n">k</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">up</span><span class="p">,</span><span class="o">&amp;</span><span class="n">repeat</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">newRight</span><span class="p">);</span>
+
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">repeat</span><span class="o">==</span><span class="mi">1</span><span class="p">)</span>
+<span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Key %d is duplicated</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">k</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">//进行了分裂，创建一个新的根</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">newRight</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span>
+<span class="w">        </span><span class="n">node</span><span class="w"> </span><span class="o">*</span><span class="n">newRoot</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">new_node</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+<span class="w">        </span><span class="n">newRoot</span><span class="o">-&gt;</span><span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">up</span><span class="p">;</span><span class="c1">//上推</span>
+<span class="w">        </span><span class="n">newRoot</span><span class="o">-&gt;</span><span class="n">count</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="c1">//根的数</span>
+<span class="w">        </span><span class="n">newRoot</span><span class="o">-&gt;</span><span class="n">children</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">*</span><span class="n">root</span><span class="p">;</span><span class="c1">//旧的根</span>
+<span class="w">        </span><span class="n">newRoot</span><span class="o">-&gt;</span><span class="n">children</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">newRight</span><span class="p">;</span><span class="c1">//新的右子</span>
+<span class="w">        </span><span class="o">*</span><span class="n">root</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">newRoot</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">insert_rec</span><span class="p">(</span><span class="n">node</span><span class="w"> </span><span class="o">*</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">k</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="n">up</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="n">repeat</span><span class="p">,</span><span class="w"> </span><span class="n">node</span><span class="w"> </span><span class="o">**</span><span class="n">newRight</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="c1">//如果根是叶子</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="o">-&gt;</span><span class="n">isLeaf</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">        </span><span class="c1">//遍历比较</span>
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">x</span><span class="o">-&gt;</span><span class="n">count</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="o">-&gt;</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">k</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="o">*</span><span class="n">repeat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="w">                </span><span class="k">return</span><span class="p">;</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">pos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">        </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">pos</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">x</span><span class="o">-&gt;</span><span class="n">count</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">x</span><span class="o">-&gt;</span><span class="n">a</span><span class="p">[</span><span class="n">pos</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">k</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">pos</span><span class="o">++</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="c1">//临时实现一个数组来存储</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">temp</span><span class="p">[</span><span class="mi">4</span><span class="p">];</span>
+<span class="w">        </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">pos</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span>
+<span class="w">            </span><span class="n">temp</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="o">-&gt;</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+<span class="w">        </span><span class="n">temp</span><span class="p">[</span><span class="n">pos</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">k</span><span class="p">;</span>
+
+<span class="w">        </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pos</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">x</span><span class="o">-&gt;</span><span class="n">count</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span>
+<span class="w">            </span><span class="n">temp</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="o">-&gt;</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">cnt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="o">-&gt;</span><span class="n">count</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+
+<span class="w">        </span><span class="c1">//小于三个</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">cnt</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">3</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">cnt</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="o">++</span><span class="p">)</span><span class="w"> </span>
+<span class="w">                </span><span class="n">x</span><span class="o">-&gt;</span><span class="n">a</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">temp</span><span class="p">[</span><span class="n">j</span><span class="p">];</span>
+<span class="w">            </span><span class="n">x</span><span class="o">-&gt;</span><span class="n">count</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cnt</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span><span class="w"> </span>
+<span class="w">        </span><span class="c1">//分裂</span>
+<span class="w">        </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w"> </span>
+<span class="w">            </span><span class="o">*</span><span class="n">newRight</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">new_node</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<span class="w">            </span><span class="c1">//左边处理</span>
+<span class="w">            </span><span class="n">x</span><span class="o">-&gt;</span><span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">temp</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span><span class="w"> </span>
+<span class="w">            </span><span class="n">x</span><span class="o">-&gt;</span><span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">temp</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span>
+<span class="w">            </span><span class="n">x</span><span class="o">-&gt;</span><span class="n">count</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
+
+<span class="w">            </span><span class="c1">//右边处理</span>
+<span class="w">            </span><span class="p">(</span><span class="o">*</span><span class="n">newRight</span><span class="p">)</span><span class="o">-&gt;</span><span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">temp</span><span class="p">[</span><span class="mi">2</span><span class="p">];</span><span class="w"> </span>
+<span class="w">            </span><span class="p">(</span><span class="o">*</span><span class="n">newRight</span><span class="p">)</span><span class="o">-&gt;</span><span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">temp</span><span class="p">[</span><span class="mi">3</span><span class="p">];</span>
+<span class="w">            </span><span class="p">(</span><span class="o">*</span><span class="n">newRight</span><span class="p">)</span><span class="o">-&gt;</span><span class="n">count</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
+<span class="w">            </span><span class="c1">//上推</span>
+<span class="w">            </span><span class="o">*</span><span class="n">up</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="n">newRight</span><span class="p">)</span><span class="o">-&gt;</span><span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="c1">//根</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">idx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+
+<span class="w">    </span><span class="c1">//先查找子节点</span>
+<span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">idx</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">x</span><span class="o">-&gt;</span><span class="n">count</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">k</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="n">x</span><span class="o">-&gt;</span><span class="n">a</span><span class="p">[</span><span class="n">idx</span><span class="p">])</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">idx</span><span class="o">++</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="c1">//在子节点进行插入</span>
+<span class="w">    </span><span class="n">insert_rec</span><span class="p">(</span><span class="n">x</span><span class="o">-&gt;</span><span class="n">children</span><span class="p">[</span><span class="n">idx</span><span class="p">],</span><span class="w"> </span><span class="n">k</span><span class="p">,</span><span class="n">up</span><span class="p">,</span><span class="w"> </span><span class="n">repeat</span><span class="p">,</span><span class="w"> </span><span class="n">newRight</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">//如果孩子没有分裂</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!*</span><span class="n">newRight</span><span class="p">)</span><span class="w"> </span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+
+<span class="w">    </span><span class="c1">//不然</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="p">[</span><span class="mi">3</span><span class="p">];</span><span class="w"> </span>
+<span class="w">    </span><span class="n">node</span><span class="w"> </span><span class="o">*</span><span class="n">tempchild</span><span class="p">[</span><span class="mi">4</span><span class="p">];</span><span class="w"> </span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">;</span>
+
+<span class="w">    </span><span class="c1">//同上原理</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">idx</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span>
+<span class="w">        </span><span class="n">b</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="o">-&gt;</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+<span class="w">    </span><span class="n">b</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">*</span><span class="n">up</span><span class="p">;</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">idx</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">x</span><span class="o">-&gt;</span><span class="n">count</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span>
+<span class="w">        </span><span class="n">b</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="o">-&gt;</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">idx</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span>
+<span class="w">        </span><span class="n">tempchild</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="o">-&gt;</span><span class="n">children</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+
+<span class="w">    </span><span class="n">tempchild</span><span class="p">[</span><span class="n">idx</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">*</span><span class="n">newRight</span><span class="p">;</span>
+
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">idx</span><span class="o">+</span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">x</span><span class="o">-&gt;</span><span class="n">count</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span>
+<span class="w">        </span><span class="n">tempchild</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="o">-&gt;</span><span class="n">children</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">count2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="o">-&gt;</span><span class="n">count</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+
+<span class="w">    </span><span class="c1">//再检查上移位置是否已满</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">count2</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">count2</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+<span class="w">            </span><span class="n">x</span><span class="o">-&gt;</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">b</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">count2</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span>
+<span class="w">            </span><span class="n">x</span><span class="o">-&gt;</span><span class="n">children</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tempchild</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+
+<span class="w">        </span><span class="n">x</span><span class="o">-&gt;</span><span class="n">count</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">count2</span><span class="p">;</span>
+<span class="w">        </span><span class="o">*</span><span class="n">up</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span>
+<span class="w">        </span><span class="o">*</span><span class="n">newRight</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">NULL</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span>
+<span class="w">    </span><span class="c1">//反之分裂同上</span>
+<span class="w">    </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="o">*</span><span class="n">newRight</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">new_node</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+<span class="w">        </span><span class="n">x</span><span class="o">-&gt;</span><span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">b</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span><span class="w"> </span>
+<span class="w">        </span><span class="n">x</span><span class="o">-&gt;</span><span class="n">count</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="w">        </span><span class="n">x</span><span class="o">-&gt;</span><span class="n">children</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tempchild</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span><span class="w"> </span>
+<span class="w">        </span><span class="n">x</span><span class="o">-&gt;</span><span class="n">children</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tempchild</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span>
+<span class="w">        </span><span class="n">x</span><span class="o">-&gt;</span><span class="n">children</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="o">-&gt;</span><span class="n">children</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">NULL</span><span class="p">;</span>
+<span class="w">        </span><span class="p">(</span><span class="o">*</span><span class="n">newRight</span><span class="p">)</span><span class="o">-&gt;</span><span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">b</span><span class="p">[</span><span class="mi">2</span><span class="p">];</span><span class="w"> </span>
+<span class="w">        </span><span class="p">(</span><span class="o">*</span><span class="n">newRight</span><span class="p">)</span><span class="o">-&gt;</span><span class="n">count</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="w">        </span><span class="p">(</span><span class="o">*</span><span class="n">newRight</span><span class="p">)</span><span class="o">-&gt;</span><span class="n">children</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tempchild</span><span class="p">[</span><span class="mi">2</span><span class="p">];</span><span class="w"> </span>
+<span class="w">        </span><span class="p">(</span><span class="o">*</span><span class="n">newRight</span><span class="p">)</span><span class="o">-&gt;</span><span class="n">children</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tempchild</span><span class="p">[</span><span class="mi">3</span><span class="p">];</span>
+
+<span class="w">        </span><span class="c1">//上推</span>
+<span class="w">        </span><span class="o">*</span><span class="n">up</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">b</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<h2 id="take-home-messages">Take-home messages</h2>
+<h3 id="red-black-trees_1">Red-black trees:</h3>
+<ul>
+<li>Binary search tree version of 2-3-4 trees. The red nodes are for 
+represent &gt;2 branches in each node.</li>
+<li>The major properties lie in that the black height is balanced for 
+each node.</li>
+<li>The insertion and deletion involve constant cost on rotations.</li>
+</ul>
+<h3 id="b-b-trees_1">B &amp; B+ trees:</h3>
+<ul>
+<li>Search trees with more branches. Suitable for reducing access </li>
+</ul>
+<h2 id="master-theorem">主定理（Master Theorem）简介</h2>
+<p>主定理用于求解形如</p>
+<p>$$
+T(n)=a\,T\left(\frac{n}{b}\right)+f(n)
+$$</p>
+<p>的分治递归式，其中常数 $a\ge1$, $b&gt;1$。记</p>
+<p>$$p=\log_b a\quad(\text{即 }n^{\log_b a}=n^p).$$</p>
+<p>比较 $f(n)$ 与 $n^p$ 的大小，可得到三类常见情形：</p>
+<ol>
+<li>
+<p>若存在常数 $\varepsilon&gt;0$ 使得
+    $$f(n)=O\big(n^{p-\varepsilon}\big),$$
+    则
+    $$T(n)=\Theta\big(n^p\big).$$</p>
+</li>
+<li>
+<p>若存在常数 $k\ge0$ 使得
+    $$f(n)=\Theta\big(n^p\log^k n\big),$$
+    则
+    $$T(n)=\Theta\big(n^p\log^{k+1} n\big).$$</p>
+</li>
+<li>
+<p>若存在常数 $\varepsilon&gt;0$ 使得
+    $$f(n)=\Omega\big(n^{p+\varepsilon}\big)$$
+    且满足正则性条件（例如存在 $c&lt;1$ 使得 $a\,f(n/b)\le c\,f(n)$），则
+    $$T(n)=\Theta\big(f(n)\big).$$</p>
+</li>
+</ol>
+<h3 id="_2">使用步骤（快速）</h3>
+<ul>
+<li>识别 $a,b,f(n)$，计算 $p=\log_b a$。</li>
+<li>比较 $f(n)$ 与 $n^p$，套用对应情形。</li>
+<li>若不满足以上情形，改用递归树或更一般的 Akra–Bazzi 定理。</li>
+</ul>
+<h3 id="_3">例子</h3>
+<ul>
+<li>归并排序：$T(n)=2T(n/2)+\Theta(n)$，这里 $p=1$, $f(n)=\Theta(n)=\Theta(n^p)$，按情形2（$k=0$）得 $T(n)=\Theta(n\log n)$。</li>
+<li>题中例子：$T(n)=2T(n/2)+\Theta(n\log n)$，$p=1$, $f(n)=\Theta(n\log n)=\Theta(n^p\log^1 n)$，按情形2（$k=1$）得 $T(n)=\Theta(n\log^2 n)$。</li>
+</ul>
+<hr />
+<p>（以上为简洁版说明，需要我把此节移动到某处或展开递归树图示、练习题吗？）
+ - cost on nodes, applications on database, secondary drives…
+ - Reduce tree depth by increasing the number of branches.</p>
+<h1 id="lec4">lec4</h1>
+<h2 id="priority-queues">Priority queues</h2>
+<h3 id="review-of-binary-heaps">Review of binary heaps(其实我全忘了嘻嘻)</h3>
+<p>Complete tree:Perfectly balanced.
+key in child &gt;= key in parent 小根堆.</p>
+<h3 id="leftist-heaps">Leftist heaps(左斜堆)</h3>
+<p>speed up merging.</p>
+<p>[定义] 空路径长度（null path length，Npl(X)）是指从节点 X 出发，沿着其子节点一直走到遇到没有两个孩子的节点（即至少有一个孩子为 NULL）所经过的最短路径长度。对于空节点（NULL），规定 Npl(NULL) = –1。 </p>
+<p>[定义]左斜堆的性质是：对于堆中的每个节点 X，其左孩子的空路径长度（null path length）&gt;= 右孩子的空路径长度。</p>
+<p>右子树r，总共至少有2的r次-1.</p>
+<div class="highlight"><pre><span></span><code>struct TreeNode 
+{ 
+ElementType Element; 
+PriorityQueue Left; 
+PriorityQueue Right; 
+int Npl; 
+} ;
+</code></pre></div>
+<p>Merge 其实就是递归实现（开什么玩笑怎么有点难，，，，
+<div class="highlight"><pre><span></span><code>PriorityQueue Merge ( PriorityQueue H1, PriorityQueue H2 ) 
+{ 
+if ( H1 == NULL ) return H2;
+if ( H2 == NULL ) return H1;
+if ( H1-&gt;Element &lt; H2-&gt;Element ) return Merge1( H1, H2 ); 
+else return Merge1( H2, H1 ); 
+}
+</code></pre></div></p>
+<h3 id="skew-heaps">Skew heaps（斜堆）</h3>
+<p>不适合递归！</p>
+<p>Merge: Always swap the left and right children except that the largest of all the nodes on the right paths does not have its children swapped. No Npl.</p>
+<p>It is an open problem to determine precisely the expected right path length of both leftist and skew heaps.</p>
+<h3 id="binomial-queuesskewheaps">Binomial Queues(优化skewheaps的插入操作)</h3>
+<p>定义：二项队列不是堆序树，而是一组堆序树的集合，被称为森林。每棵堆序树都是一棵二项树。</p>
+<p>类似于二进制处理
+<img alt="binomial queues" src="../imgs/binomial%20queues.png" /></p>
+<h3 id="comparison">Comparison</h3>
+<p><img alt="analyse" src="../imgs/analyse.png" /></p>
+<h3 id="take-home-messages_1">Take-Home Messages</h3>
+<h4 id="leftist-heaps_1">Leftist heaps:</h4>
+<p>• Reduce merge cost to O(log N) by building unbalanced heaps, and put all the computation on the right (light) paths.</p>
+<h4 id="skew-heaps_1">Skew heaps:</h4>
+<p>• Avoiding skewness checking by always flipping left and right. Guarantee amortized cost O(log N).</p>
+<h4 id="binomial-queues">Binomial queues:</h4>
+<p>• Improve the amortized cost of insertion into O(1). Using the idea of binary counter addition.</p>
+<h4 id="comparison_1">Comparison</h4>
+<p><img alt="analyse" src="../imgs/analyse.png" /></p>
+<h1 id="lec5">lec5</h1>
+<h2 id="search-problem">Search problem</h2>
+<p>BFS 和 DFS 结合 -&gt; (Iterative deepening Search)</p>
+<h3 id="a-search">A* Search</h3>
+<p>维护了一个函数 $ f(x) = g(x) + h(x) $</p>
+<p>保证了找到最优解当 $ h(x) $ 从不低估真正的开销。</p>
+<h2 id="search-with-backtracking">Search with backtracking</h2>
+<p>回溯算法</p>
+<p>Tic tac toe-Minimax Strategy</p>
+<h1 id="lec6">lec6</h1>
+<h2 id="divide-and-conquer">Divide and Conquer</h2>
+<ul>
+<li>分为小问题</li>
+<li>解决每个小问题</li>
+<li>返回</li>
+</ul>
+<h3 id="closest-pair-of-points">Closest pair of points</h3>
+<p>计算几何</p>
+<p>Divide: draw vertical line L so that n / 2 points on each side.
+- Conquer: find closest pair in each side recursively.
+- Combine: find closest pair with one point in each side.
+- Return best of 3 solutions.</p>
+<p><img alt="solution" src="../imgs/lec6-points.png" /></p>
+<p>在选择考虑范围的时候，只需要采用左右最小的值。</p>
+<p><img alt="proof" src="../imgs/lec6-proofpoints.png" /></p>
+<h3 id="solving-recurrent-equations">Solving recurrent equations</h3>
+<p>combine </p>
+<h1 id="lec7">lec7</h1>
+<h2 id="dynamic-programming">Dynamic Programming</h2>
+<h3 id="shortest-path-in-dags">shortest path in DAGs</h3>
+<p>其实就是状态转移--马尔可夫决策过程</p>
+<p><img alt="转移" src="../imgs/lec7-%E7%8A%B6%E6%80%81%E8%BD%AC%E7%A7%BB.png" /></p>
+<h3 id="maximum-subsequence-sum">Maximum subsequence sum</h3>
+<p><img alt="max" src="../imgs/lec7-max.png" /></p>
+<h3 id="optimal-binary-search-trees">Optimal binary search trees</h3>
+<h1 id="lec8">lec8 期中 + 贪心算法</h1>
+<h2 id="active-selection">Active Selection</h2>
+<p>贪心算法应该怎么选？</p>
+<p>[Earliest finish time] Consider jobs in ascending order of fj.</p>
+<p>（pro4要证明贪心是对的）</p>
+<p>Proposition. Can implement earliest-finish-time first in O(n log n) time.
+・Keep track of job j<em> that was added last to S.
+・Job j is compatible with S iff s j ≥ fj</em> .
+・Sorting by finish times takes O(n log n) time.</p>
+<p>反证？</p>
+<h1 id="lec9">lec9</h1>
+<h2 id="intractability">Intractability</h2>
+<h3 id="computability">Computability</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["content.action.edit", "navigation.tracking", "navigation.expand", "navigation.top", "navigation.footer"], "search": "../../../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,766 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>计算机系统II - Azur3lily</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.618322db.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#ii" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../.." title="Azur3lily" class="md-header__button md-logo" aria-label="Azur3lily" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Azur3lily
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              计算机系统II
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="Azur3lily" class="md-nav__button md-logo" aria-label="Azur3lily" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Azur3lily
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    首页
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../photography/docs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    青志摄影
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="ii">计算机系统II</h1>
+<h1 id="lec2">lec2</h1>
+<h2 id="design-of-pipeline">Design of pipeline</h2>
+<p>Overlapping execution</p>
+<p>The difference between stages (IF - ID - EX) may cause time consumption or resource competition.</p>
+<ul>
+<li>一次重叠（partial overlap）：在解码第 k 条指令时开始执行第 k+1 条指令。可以缩短总体耗时，但会使控制逻辑更复杂。</li>
+<li>二次重叠（further overlap）：在执行第 k 条指令时并行处理第 k+1 条指令。</li>
+</ul>
+<p>为了解决内存访问冲突（例如 instruction cache 与 data cache 共享，或指令存储器 imem 与数据存储器 dmem 冲突），可以在主存控制器与指令译码单元之间增加指令缓冲区（instruction buffer）。
+缓冲区可以临时存放多条取出的指令，降低取指与访存之间的冲突，从而减少流水线停顿。</p>
+<p><img alt="Single Overlapping Execution" src="../imgs/single_overlapping_execution.png" /></p>
+<p>buffer在进入与排空的时候一定会存在时间的浪费。</p>
+<p>SCPU里并不是所有的指令都会用到五个阶段，于此存在部分浪费。</p>
+<h2 id="classes-of-pipelining">Classes of pipelining</h2>
+<ul>
+<li>
+<p>single function</p>
+</li>
+<li>
+<p>multi function</p>
+</li>
+<li>static:切换功能的时候必须要排空</li>
+<li>
+<p>dynamic:同时可以执行两种功能（看看都难）</p>
+</li>
+<li>
+<p>线性流水线：各阶段串联连接且无反馈回路。数据流经每个阶段时，每个阶段最多只能进行一次传输。</p>
+</li>
+<li>
+<p>非线性流水线：除串联连接外，还设有反馈回路。避免产生冲突</p>
+</li>
+</ul>
+<p><img alt="nonlinear pipelining" src="../imgs/lec2-nonlinearpipelining.png" /></p>
+<h2 id="an-inplementation-of-pipelining-cpurisc-v">An Inplementation of pipelining cpu(risc-v)</h2>
+<p><img alt="流水线举例" src="../imgs/lec2-pipeline%20cpu.png" /></p>
+<h3 id="understand-how-pipelined-datapath-work">understand how pipelined datapath work</h3>
+<h4 id="loadstore-instruction">load/store instruction</h4>
+<ul>
+<li>
+<p>store指令也把指令存入寄存器中</p>
+</li>
+<li>
+<p>随着流水线的进行，load指令的返回地址可能已经被后续的指令改写，我们需要把原先pc也要通过中间寄存器进行传递，这样可以保证写回地址的正确性。</p>
+</li>
+</ul>
+<p>那么优化可以得到cpu。</p>
+<p><img alt="优化的cpu" src="../imgs/lec2-pipeliningcorrected.png" /></p>
+<h4 id="control-signals">control signals</h4>
+<table>
+<thead>
+<tr>
+<th>信号名称</th>
+<th>未断言（0）效果</th>
+<th>断言（1）效果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RegWrite</td>
+<td>不执行任何寄存器写操作</td>
+<td>将“写数据”写入指令指定的目标寄存器（由 IR 的 rd 字段确定）</td>
+</tr>
+<tr>
+<td>ALUSrc</td>
+<td>ALU 的第二个操作数来自寄存器读数据 2</td>
+<td>ALU 的第二个操作数来自指令的 12 位符号扩展立即数</td>
+</tr>
+<tr>
+<td>PCSrc</td>
+<td>PC 更新为当前 PC + 4（顺序执行）</td>
+<td>PC 更新为分支目标地址（由 EX 阶段 ALU 计算得出）</td>
+</tr>
+<tr>
+<td>MemRead</td>
+<td>不读取数据内存内容</td>
+<td>按输入地址读取数据内存，将结果输出到“Read data”端</td>
+</tr>
+<tr>
+<td>MemWrite</td>
+<td>不修改数据内存内容</td>
+<td>按输入地址将“写数据”（来自 Read data 2）写入数据内存</td>
+</tr>
+<tr>
+<td>MemtoReg</td>
+<td>寄存器写回数据来自 ALU 输出（ALUOutput）</td>
+<td>寄存器写回数据来自数据内存的读结果（Read data）</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="finalcpu" src="../imgs/lec2-finalcpu.png" /></p>
+<h2 id="performance-evaluation-of-pipelining">Performance evaluation of pipelining</h2>
+<p><img alt="time" src="../imgs/lec2-pipelinetime.png" /></p>
+<h3 id="throughputp"><strong>Throughpu(TP)</strong></h3>
+<h4 id="tp">一、TP的核心定义与本质</h4>
+<p>吞吐量（Throughput，简称TP）是衡量流水线性能的核心指标，指<strong>单位时间内流水线能够完成的指令或计算任务数量</strong></p>
+<p>$$TP = \frac{n}{T}$$</p>
+<p>其中，(n) 代表完成的指令（或任务）总数，(T) 代表完成 (n) 个指令（或任务）的总执行时间。</p>
+<p>完成 (n) 个指令的总时间由两部分构成,第一句语句的加载（m），和后续（n-1）个语句的运行。</p>
+<p>因此，总执行时间公式为：  </p>
+<p>$$T = (m + n - 1) \times \Delta t_0$$</p>
+<ul>
+<li>理想流水线的TP公式：将总执行时间代入TP核心公式，可得<br />
+  $$TP = \frac{n}{(m + n - 1) \times \Delta t_0}$$  </li>
+<li>最大吞吐量（(TP_{max})）：当指令总数 (n \gg m)（指令数远大于流水线阶段数）时，(m) 和 (-1) 可忽略，此时 (TP) 无限接近 (TP_{max})，且 (TP_{max}) 由单阶段时间决定：<br />
+  $$TP_{max} = \frac{1}{\Delta t_0}$$  </li>
+<li>实际TP与 (TP_{max}) 的关联：通过公式变形可明确两者的比例关系，即<br />
+  $$TP = \frac{n}{n + m - 1} \times TP_{max}$$</li>
+</ul>
+<p>例如，在前文示例中可给出一些常见量化值（仅示例）:</p>
+<h4 id="solve-pipeline-bottleneck">solve pipeline bottleneck</h4>
+<ul>
+<li>subdivision</li>
+<li>repetition 
+<img alt="repetiton" src="../imgs/lec2-reprtition.png" /></li>
+</ul>
+<h3 id="speedupsp-"><strong>Speedup(sp)</strong> --加速比</h3>
+<h3 id="speedup-sp">Speedup (Sp) 与效率 (η)</h3>
+<p>速度加速比：
+$$
+Sp = \frac{n \times m \times \Delta t_0}{(m + n - 1)\times \Delta t_0}
+= \frac{n\,m}{m + n - 1}
+$$</p>
+<p>流水线效率（每阶段平均利用率）：
+$$
+\eta = \frac{Sp}{m}
+= \frac{\dfrac{n\,m}{m + n - 1}}{m}
+= \frac{n}{m + n - 1}
+$$</p>
+<p>当 n \gg m 时，Sp \to m，\eta \to 1（接近理想情况）。</p>
+<p><img alt="evaluationexp" src="../imgs/lec2-evaluationexp.png" /></p>
+<p>$$T_p = \frac{7}{15}\,\Delta t$$</p>
+<p>$$S_p = \frac{4\cdot 3\,\Delta t + 3\cdot 4\,\Delta t}{15\,\Delta t} = 1.6$$</p>
+<p>$$\eta = \frac{3\times 4\,\Delta t + 4\times 3\,\Delta t}{5\times 15\,\Delta t} = 32\%$$</p>
+<p><img alt="evexp2" src="../imgs/lec2-evaluationexp2.png" /></p>
+<h1 id="lec3">lec3</h1>
+<p>Increasing instruction throughput (并行性)</p>
+<h2 id="hazards-of-pipelining">Hazards of pipelining</h2>
+<p><img alt="introduction" src="../imgs/lec3-introductionhazard.png" /></p>
+<h3 id="stuctural-hazard">stuctural hazard</h3>
+<p>A required resource is busy.</p>
+<p><img alt="structualhazard" src="../imgs/lec3-structuralhazard.png" /></p>
+<ul>
+<li>
+<p>Solution 1: Instructions take it in turns to use resource, some instructions have to stall</p>
+</li>
+<li>
+<p>Solution 2: Add more hardware to machine</p>
+</li>
+</ul>
+<h3 id="data-hazards">data hazards</h3>
+<p><img alt="datahazard" src="../imgs/lec3-datahazard.png" /></p>
+<h4 id="forwarding">forwarding</h4>
+<p>Adding extra hardware to retrieve the missing item early from the internal resources</p>
+<p><img alt="forwarding" src="../imgs/lec3-forwarding2.png" /></p>
+<h5 id="forwardingpath">forwardingpath</h5>
+<p><img alt="forwardingpath" src="../imgs/lec3-forwardingpath.png" /></p>
+<h5 id="forwarding-conditions">forwarding conditions</h5>
+<p>EX hazard和MEM hazard</p>
+<table>
+<thead>
+<tr>
+<th>信号</th>
+<th>状态</th>
+<th>操作数来源</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ForwardA</td>
+<td>00</td>
+<td>ID/EX寄存器</td>
+<td>来自寄存器堆的原始值</td>
+</tr>
+<tr>
+<td>ForwardA</td>
+<td>10</td>
+<td>EX/MEM寄存器</td>
+<td>前一条指令的ALU结果（未写回寄存器堆）</td>
+</tr>
+<tr>
+<td>ForwardA</td>
+<td>01</td>
+<td>MEM/WB寄存器</td>
+<td>更早指令的结果（内存数据或早期ALU结果）</td>
+</tr>
+<tr>
+<td>ForwardB</td>
+<td>00</td>
+<td>ID/EX寄存器</td>
+<td>来自寄存器堆的原始值</td>
+</tr>
+<tr>
+<td>ForwardB</td>
+<td>10</td>
+<td>EX/MEM寄存器</td>
+<td>前一条指令的ALU结果（未写回寄存器堆）</td>
+</tr>
+<tr>
+<td>ForwardB</td>
+<td>01</td>
+<td>MEM/WB寄存器</td>
+<td>更早指令的结果（内存数据或早期ALU结果）</td>
+</tr>
+</tbody>
+</table>
+<h4 id="double-data-hazard">Double Data hazard</h4>
+<div class="highlight"><pre><span></span><code><span class="nf">add</span><span class="w"> </span><span class="no">x1</span><span class="p">,</span><span class="no">x1</span><span class="p">,</span><span class="no">x2</span>
+<span class="nf">add</span><span class="w"> </span><span class="no">x1</span><span class="p">,</span><span class="no">x1</span><span class="p">,</span><span class="no">x3</span>
+<span class="nf">add</span><span class="w"> </span><span class="no">x1</span><span class="p">,</span><span class="no">x1</span><span class="p">,</span><span class="no">x4</span>
+</code></pre></div>
+<p>Use the most recent data.(在前置条件当中加入判断不是EX hazard)</p>
+<h4 id="load-use-hazard">Load-Use Hazard</h4>
+<div class="highlight"><pre><span></span><code>lw x1, 0(x2)   # MEM阶段末尾才获取x1的值
+add x3, x1, x4 # EX阶段需x1，前推无法及时提供
+</code></pre></div>
+<p>由此我们需要引入stall机制, 再加上forwarding来实现。</p>
+<h3 id="pipelining-with-stall">Pipelining with stall</h3>
+<ul>
+<li>Force control values in ID/EX register 0</li>
+<li>Prevent update of PC and IF/ID register
+(可以使用软件重排序来避免冲突导致效率浪费)
+--NOP</li>
+</ul>
+<p><img alt="stall" src="../imgs/lec3-stalldatapath.png" /></p>
+<h3 id="control-hazards">control hazards</h3>
+<p>flow of excution depends on previous instruction.</p>
+<p>Problem:THe conditional branch instruction(B/J)</p>
+<p>存在forwarding也解决不了的问题（b指令紧邻相关语句的情况）所以我们需要引入stall使之到达可以实现的时候。</p>
+<h4 id="branch-hazards">Branch hazards</h4>
+<p><img alt="branchhazard" src="../imgs/lec3-branchhazard.png" /></p>
+<p>beq的结果我们需要等到运行到第三阶段才能得到，于是我们浪费了3 clock cycles。</p>
+<h4 id="how-to-reduce-stall">How to reduce stall</h4>
+<ul>
+<li>in risc-v pipelining</li>
+<li>compare registers and compute target <code>early</code> in the pipelining</li>
+<li>
+<p>add hardware to do in ID stage</p>
+</li>
+<li>
+<p>key processes in branch instructions</p>
+</li>
+<li>compute the branch target address</li>
+<li>
+<p>judge if the branch success</p>
+</li>
+<li>
+<p>determine outcome to ID stage</p>
+</li>
+<li>target address adder</li>
+<li>register comparator</li>
+</ul>
+<p><img alt="solution1" src="../imgs/lec3-solutionstall.png" /></p>
+<p>‘赌博’</p>
+<p><img alt="solution2" src="../imgs/lec3-solutionprediction.png" /></p>
+<p>更加高级的版本--预测一部分条件分支不会发生</p>
+<p>exp：针对循环底部的条件分支，因为这类分支 “很可能跳转到循环顶部（they are likely to be taken to the top of the loops）”，所以对于更早地址的这类分支，会 “总是预测跳转（always predict taken）”，以此优化流水线执行，减少因控制冒险导致的停顿。</p>
+<p><img alt="solution3" src="../imgs/lec3-Delayed%20Decision.png" /></p>
+<h4 id="more-about-reducing-branch-delay">More About -- Reducing Branch Delay</h4>
+<h5 id="predict-branch-takenuntaken">Predict branch taken/untaken</h5>
+<p><img alt="predictriscv" src="../imgs/lec3-predictriscv.png" /></p>
+<h5 id="delay-branchriscvhh">Delay Branch（riscv不用了hh）</h5>
+<p>分支延迟槽(delay slot)通过强制执行分支后的一条指令，让流水线在分支判断期间保持忙碌，减少因控制冒险造成的性能损失。</p>
+<h4 id="dynamic-branch-prediction">Dynamic Branch Prediction</h4>
+<p>根据当前指令的跳转历史做判别(猜测之类的)
+ - Branch prediction buffer
+ - Indexed by recent branch instruction address
+ - stores outcome
+ - excute branch</p>
+<h4 id="branch-history-tablebhtfsm">Branch History Table(BHT)(FSM)</h4>
+<h5 id="1-bit-predictorshortcoming">1-bit Predictor:shortcoming</h5>
+<p>每错误预测一次就会修改预期状态（外循环和内循环会造成两次的跳转修改）</p>
+<h5 id="2-bit">2-bit</h5>
+<p><img alt="2bitBHT" src="../imgs/lec3-2bitBHT.png" /></p>
+<p>巧妙解决了内循环1000次外循环10000次的矛盾（连续两次跳转不正常才修改状态）</p>
+<ul>
+<li>Branch-Target buffer</li>
+<li>速度更快</li>
+<li>提供更多的指令</li>
+<li>Integrated Instruction Fetch Units（可能需要多个周期来取地址）</li>
+</ul>
+<h1 id="lec5">lec5</h1>
+<h2 id="scheduling-of-nonlinear-pipelining">Scheduling of NONlinear pipelining</h2>
+<p>存在回环 存在冲突</p>
+<p><img alt="nonlinear" src="../imgs/lec2-nonlinearpipelining.png" /></p>
+<p>Reservationn table </p>
+<p><img alt="conflictvector" src="../imgs/lec5-conflictvector.png" /></p>
+<p>作图得到，需要补充的事（1，5，6，8）是根据同一个部件间隔多少周期可能存在冲突决定的，而冲突向量是把对应位置放置为1得到的 （10110001）</p>
+<p><img alt="conflict" src="../imgs/lec5-conflictexp.png" /></p>
+<p>多种情况，以及预期的时钟周期的长度，拉长了时间的发射间隔：</p>
+<p><img alt="fsm" src="../imgs/lec5-FSMtransiton.png" /></p>
+<h2 id="multiple-issue">Multiple Issue</h2>
+<h3 id="instruction-level-parallelismilp">Instruction-Level Parallelism（ILP）并行性</h3>
+<ul>
+<li>Deeper pipeline</li>
+<li>Multiple issue(4-way multiple-issue)</li>
+<li>dependencies reduce this in practice</li>
+</ul>
+<h3 id="speculation">Speculation</h3>
+<ul>
+<li>Guess what to do with an instruction.</li>
+<li>
+<p>Common to static and dynamic multiple issue.(on branch outcome or load)</p>
+</li>
+<li>
+<p>Compiler Speculation:reorder instructions(move load before branch)</p>
+</li>
+<li>
+<p>Hardware Speculation:look ahead for instructions to excute</p>
+</li>
+</ul>
+<h3 id="superscalar">Superscalar</h3>
+<p>超标量流水线(1-8)：实则就是一次性发送很多条指令，在不冲突的时候同时进行--引入了更多的硬件来实现多条流水线的并行。按顺序的发射，同时冲突的删除在流出的时候被处理好。</p>
+<p>Dual-Issue Risc-v</p>
+<p>怎么做？
+1. 按顺序的检测发射的包里面是否存在冲突
+2. 检测包和包之间的冲突（data hazard）</p>
+<p>发射的时候：1条整型 + 1条浮点型（要求多复用部件）</p>
+<p>ALU/Branch 槽
+Load/Store 槽</p>
+<p>Hazards的处理
+EX data hazard
+ - forwarding avoided
+<div class="highlight"><pre><span></span><code>LOOP:ld x31,0(x20)
+    add x31,x31,x21
+    sd x31,0(x20)
+    addi x20,x20,-8
+    blt x22,x20,loop
+</code></pre></div></p>
+<table>
+<thead>
+<tr>
+<th>cycle</th>
+<th>ALU/Branch 槽</th>
+<th>Load/Store 槽</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>nop</td>
+<td>ld x31,0(x20)</td>
+</tr>
+<tr>
+<td>2</td>
+<td>add x31,x31,x21</td>
+<td>nop</td>
+</tr>
+<tr>
+<td>3</td>
+<td>add x20,x20,-8</td>
+<td>sd x31,0(x20)</td>
+</tr>
+<tr>
+<td>4</td>
+<td>blt x22,x20,loop</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>IPC = 5/4 = 1.25</p>
+<h3 id="vlimvery-long-instruction-word">VLIM(Very Long Instruction Word)</h3>
+<p>超长指令字：把多条指令捆绑在了一个指令当中，每n分之一发送一条，共n条</p>
+<p><img alt="superpipeline" src="../imgs/lec5-superpipeline.png" /></p>
+<h1 id="lec4-software-hardware-interface">lec4 Software-Hardware Interface</h1>
+<h2 id="exceptions-and-interrupts">Exceptions and interrupts</h2>
+<p>Exceptions:unexpected change in flow
+interrupts:from an external I/O controller</p>
+<h3 id="handling-exceptions">handling exceptions</h3>
+<ul>
+<li>save pc of offending instruction(SEPC)</li>
+<li>save indication of the problem(SCAUSE)</li>
+</ul>
+<p>what to do?
+read cause and tansfer to relevant handler
+determine action required
+if restartable
+ - take corrective action
+ - use SEPC to return to program
+otherwive
+ - terminate program
+ - report error using SEPC,SCAUSE</p>
+<p>流水线中可能引入乱序完成</p>
+<h2 id="software-hardware-interface">Software-Hardware Interface</h2>
+<p>复习了系统一？讲了下汇编语言和cpu，load program，excute program</p>
+<h2 id="brief-introduction-of-os">Brief introduction of OS</h2>
+<p>resource allocator</p>
+<h1 id="oslinux">OS（基于linux）.</h1>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["content.action.edit", "navigation.tracking", "navigation.expand", "navigation.top", "navigation.footer"], "search": "../../../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+    
+  </body>
+</html>
