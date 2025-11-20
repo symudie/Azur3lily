@@ -599,6 +599,25 @@ Proposition. Can implement earliest-finish-time first in O(n log n) time.
 
 # lec9
 
-## Intractability
+## Intractability（计算复杂度）
 
 ### Computability
+Church-Turing Thesis:Any computable functions can be computed by TMs
+ (so can Lambda-calculus).
+
+## P，NP，co-NP
+
+### decision vs Optimization problem
+
+Fact: For each optimization problem X, there is a decision version X 0 of the problem. If we have a polynomial time algorithm for the
+decision version X 0 , we can solve the original problem X in
+polynomial time.
+
+NP 不能在多项式时间内计算，但是可以在多项式时间内验证
+
+![np](imgs/lec9-NP.png)
+
+## NP-completeness
+
+### Poly-Time Reduction
+
