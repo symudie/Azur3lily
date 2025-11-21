@@ -387,4 +387,140 @@ resource allocator
 
 # OS（基于linux）.
 
+## lec5 
 
+From a hello-world program
+- Compiler basics - Behind gcc main.c
+- ELF binary basics - What’s a.out
+- Running a binary - Behind ./a.out
+
+### Compiler basics
+
+![compiler](imgs/lec5-compilerbasics.png)
+
+- 预处理（cpp）→ 展开头文件
+- 编译（gcc -S）→ 生成汇编 .s
+- 汇编（as）→ 生成目标文件 .o（ELF 格式）
+- 链接（ld / gcc）→ 生成可执行文件 a.out
+
+- crt
+C runtime:Startup routines before main function ,Simplify code can be
+
+![elf](imgs/lec5-elf.png)
+
+包含多个段（sections）：
+- .text：代码
+- .rodata：只读数据（如字符串常量）
+- .data：已初始化全局变量
+- .bss：未初始化全局/静态变量
+
+![Cpro](imgs/lec5-Cpro.png)
+
+readelf -h a.out → 查看 ELF 头
+objdump -d a.out → 反汇编代码
+
+运行程序（./a.out）发生了什么？
+Shell 调用 execve 系统调用
+Linux 内核：
+加载 ELF 文件（load_elf_binary）
+设置栈、堆、内存映射
+跳转到入口点（通常是 _start，来自 crt0.o）
+最终调用 __libc_start_main → 执行 main()
+
+### How does an OS start
+
+the bootstrap program
+
+Part of the system firmware, which in turn loads a bootloader responsible for loading the OS.
+
+#### 1. 启动过程（Booting）
+- **第一步：固件（Firmware）**
+  - 计算机加电后，首先运行存储在 **ROM/Flash** 中的**引导程序（Bootstrap Program）**。
+  - 在 RISC-V 架构实验中，使用的是 **OpenSBI**。
+- **第二步：加载内核**
+  - 引导程序初始化硬件，找到硬盘上的 **OS 内核**，将其加载到内存，并**跳转执行**。
+
+#### 2. 内核初始化（Kernel Initialization）
+- 内核继续完成初始化：
+  - 设置内存管理
+  - 加载设备驱动
+  - 启动第一个用户态进程（`init` 或 `systemd`）
+- **之后，系统进入“事件驱动”模式**：什么都不做，直到有事件发生。
+
+#### 3. 核心运行机制：多道程序设计 & 分时
+
+- **多道程序设计（Multi-programming）**：
+  - 多个程序同时驻留在内存中。
+  - 当一个程序等待 I/O 时，CPU 切换去执行另一个程序 → **提高 CPU 利用率**。
+
+- **分时系统（Time-sharing）**：
+  - 多道程序设计的升级版，通过**快速上下文切换**，给每个用户“独占机器”的错觉。
+  - 这就是现代“进程（Process）”概念的来源。
+
+#### 4. 用户态 vs 内核态（User vs Kernel Mode）
+- **为什么需要两种模式？**
+  - **安全与保护**：防止用户程序直接操作硬件或破坏其他程序。
+- **特权指令（Protected Instructions）**：
+  - 只能在**内核态**执行，例如：
+    - 直接访问 I/O 设备
+    - 修改内存管理单元（MMU）
+    - 关闭中断
+    - 设置系统定时器
+- **模式切换**：
+  - **用户态 → 内核态**：通过**事件**（中断、异常、系统调用）触发。
+  - **内核态 → 用户态**：内核处理完事件后，返回用户程序。
+
+#### 5. 事件驱动模型（The OS as an Event Handler）
+- **操作系统本质上是一个巨大的事件处理器**。
+- **两类事件**：
+  | 事件类型 | 触发源 | 例子 |
+  |---|---|---|
+  | **中断（Interrupts）** | 硬件 | 键盘输入、网络数据包到达、定时器到期 |
+  | **异常/陷阱（Exceptions/Traps）** | 软件/CPU | 系统调用、除零错误、缺页异常、非法指令 |
+
+- **系统调用（System Calls）**：
+  - 是一种特殊的“trap”，是**用户程序请求内核服务的唯一合法途径**。
+  - 例如：`write()`, `fork()`, `open()`。
+  - 在 x86-64 上，通过 `syscall` 指令触发。
+
+#### 6. 定时器（Timer）：内核的“夺权”工具
+- **问题**：如果一个用户程序永不发起系统调用，内核如何夺回 CPU 控制权？
+- **解决方案**：**可编程定时器**。
+  - 内核在交出 CPU 前，设置一个定时器中断（如每 10ms 一次）。
+  - 时间一到，硬件强制产生中断，CPU 切回内核态。
+  - 这是实现**公平调度**和**抢占式多任务**的基础。
+
+---
+
+### 第三部分：操作系统如何管理资源？（Resource Management）
+
+这部分列出了 OS 提供的五大核心服务：
+
+| 服务 | 负责内容 |
+|---|---|
+| **1. 进程管理（Process Management）** | 创建/删除进程、进程间通信（IPC）、同步、死锁处理 |
+| **2. 内存管理（Memory Management）** | 跟踪内存使用、决定哪些进程/数据在内存中、分配/回收内存 |
+| **3. 存储管理（Storage Management）** | 文件系统、目录管理、磁盘空间分配、备份 |
+| **4. I/O 管理（I/O Management）** | 隐藏硬件细节、提供统一设备驱动接口、缓冲/假脱机（Spooling） |
+| **5. 保护与安全（Protection and Security）** | 访问控制（用户ID/组ID）、内存/设备保护、防御攻击（病毒、DoS） |
+
+---
+
+## 💡 四、关键讨论题（思考题）
+
+PDF 最后提出了一个经典的面试/考试题：
+
+> **以下哪些指令应该是特权指令？为什么？**
+> - 设置系统定时器 → **是**（影响调度公平性）
+> - 读取时钟 → **否**（只读，无害）
+> - 清空内存 → **是**（会破坏其他程序数据）
+> - 执行系统调用指令 → **否**（这是用户进入内核的合法入口）
+> - 关闭中断 → **是**（可能导致系统无法响应）
+> - 修改设备状态表 → **是**（直接影响硬件）
+> - 访问 I/O 设备 → **是**（必须由内核统一管理）
+
+这个问题完美检验了你对 **“用户态/内核态”** 和 **“保护”** 概念的理解。
+
+## lec6
+
+![divide](imgs/lec6-divide.png)
